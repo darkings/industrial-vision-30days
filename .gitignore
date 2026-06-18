@@ -1,0 +1,12 @@
+# Python 虚拟环境包含本机路径，不应该在不同电脑之间同步。
+.venv/
+
+# Python 运行后生成的字节码缓存。
+__pycache__/
+*.py[cod]
+
+# 常见编辑器和操作系统临时文件。
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

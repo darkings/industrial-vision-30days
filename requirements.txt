@@ -1,0 +1,8 @@
+# OpenCV 的 Python 包，用于读图、图像处理、画框、摄像头读取等。
+opencv-python==4.13.0.92
+
+# 数组和矩阵运算库。OpenCV 读取的图片本质上是 NumPy 数组。
+numpy==2.4.6
+
+# 学习阶段用于显示图片、绘图和比较处理结果。
+matplotlib==3.11.0
