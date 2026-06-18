@@ -18,7 +18,7 @@ image = cv2.imread(IMAGE_FILE_PATH)
 
 if image is None:
   # 不能直接用print("图片读取失败")，因为会导致代码继续运行。图片读取不出来下面的copy也会报错
-  # 用 直接抛出错误并终止程序
+  # 使用rise 主动抛出错误并终止程序
   raise FileNotFoundError("图片读取失败")
 
 
@@ -41,12 +41,30 @@ cv2.rectangle(
   2
 )
 
-save_iamge = cv2.imwrite(
+# 文字标签 
+label_text = "ROI"
+# 文字坐标
+label_x = x1
+label_y = max(y1 -10,100)
+
+# 标注文字
+cv2.putText(
+  marked_image,
+  label_text,
+  (label_x,label_y),
+  cv2.FONT_HERSHEY_SIMPLEX,
+  2,
+  (0,255,0),
+  2,
+  cv2.LINE_AA
+)
+
+save_image = cv2.imwrite(
   str(OUTPUTS_IMAGE_PATH),
   marked_image
 )
 
-if save_iamge:
+if save_image:
   print("保存成功，路径为：",OUTPUTS_IMAGE_PATH)
 else:
   print("保存失败")
