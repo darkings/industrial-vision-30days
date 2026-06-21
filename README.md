@@ -2,7 +2,7 @@
 
 这是一个面向工业落地的高强度学习项目，目标是在 1 个月内完成可展示的工业视觉作品。
 
-最后更新：2026-06-18
+最后更新：2026-06-22
 
 主学习路线：
 
@@ -16,7 +16,8 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 |---|---|---|---|
 | Day 1 | OpenCV 图像基础 | 已完成 | 读图、shape、像素、灰度图、缩放、ROI、图片保存 |
 | Day 2 | OpenCV 图像预处理 | 已完成 | 画框、文字、批处理、滤波、亮度/对比度、直方图、CLAHE、锐化 |
-| Day 3 | 阈值分割与形态学 | 待开始 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
+| Day 3 | 阈值分割与形态学 | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
+| Day 4 | 边缘检测与轮廓基础 | 待开始 | Canny 边缘检测、轮廓查找、轮廓绘制与基础筛选 |
 
 当前已完成的主要练习：
 
@@ -31,6 +32,15 @@ week01-opencv/day02/test03_image_filters.py
 week01-opencv/day02/test04_brightness_contrast.py
 week01-opencv/day02/test05_histogram_equalization.py
 week01-opencv/day02/test06_image_sharpening.py
+
+week01-opencv/day03/test01_fixed_threshold.py
+week01-opencv/day03/test02_threshold_comparison.py
+week01-opencv/day03/test03_otsu_threshold.py
+week01-opencv/day03/test04_otsu_gaussian_comparison.py
+week01-opencv/day03/test05_adaptive_threshold.py
+week01-opencv/day03/test06_erode_dilate.py
+week01-opencv/day03/test07_open_close.py
+week01-opencv/day03/test08_comprehensive.py
 ```
 
 ## 从这里继续
@@ -45,10 +55,10 @@ week01-opencv/day02/test06_image_sharpening.py
 当前下一课：
 
 ```text
-Day 3
-第 1 部分：固定阈值二值化
-第 2 部分：OTSU 与自适应阈值
-第 3 部分：形态学基础
+Day 4
+第 1 部分：Canny 边缘检测
+第 2 部分：轮廓查找与绘制
+第 3 部分：轮廓面积、周长与基础筛选
 ```
 
 ## 每课完成后的同步规则
@@ -71,28 +81,38 @@ Day 3
 
 ## 项目位置
 
-当前 WSL 项目路径：
+### macOS
+
+```text
+/Users/jie/Projects.localized/industrial-vision-30days
+```
+
+当前 Obsidian 知识库中的工业视觉笔记目录：
+
+```text
+/Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision
+```
+
+### Ubuntu/WSL
 
 ```text
 /home/jie/Projects/industrial-vision-30days
 ```
 
-Windows 访问路径：
+Windows 访问 WSL 项目的路径：
 
 ```text
 \\wsl.localhost\Ubuntu\home\jie\Projects\industrial-vision-30days
 ```
 
-当前 Obsidian 知识库：
+不同电脑的操作系统、用户名、Python 版本和绝对路径可以不同。项目源码通过 Git 同步，`.venv` 必须在每台电脑上根据 `requirements.txt` 单独创建；不要把某一台电脑的绝对路径用于程序代码。
+
+Obsidian 笔记通过 iCloud 同步时，各系统上的本地绝对路径也可能不同。当前 macOS 使用上方记录的目录。
+
+Day 3 笔记：
 
 ```text
-C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain
-```
-
-工业视觉笔记目录：
-
-```text
-C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\raw\industrial
+/Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision/Day03.md
 ```
 
 ## 在另一台电脑恢复环境

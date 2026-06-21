@@ -1,6 +1,6 @@
 # 工业视觉学习错误知识库
 
-最后更新：2026-06-18
+最后更新：2026-06-22
 
 这不是一次性的错题清单，而是整个 30 天学习项目持续维护的错误知识库。
 
@@ -125,6 +125,24 @@ if image is None:
 以后如何避免：
 
 每次写完 `cv2.imread()`，立即写 `if image is None`，不要等到后面发生 `.shape` 或 `.copy()` 报错。
+
+重复错误记录：
+
+```text
+日期：2026-06-21
+课程：Day 3，自适应阈值
+文件：week01-opencv/day03/test05_adaptive_threshold.py
+```
+
+再次出现的写法：
+
+```python
+if image is None:
+    print("图片读取失败！")
+```
+
+打印提示不会终止程序，后续 `cv2.cvtColor(image, ...)` 仍会收到 `None`。
+本次已改为抛出 `FileNotFoundError`，让单张图片脚本立即终止。
 
 ## E003：错误理解 `break` 和 `continue`
 
