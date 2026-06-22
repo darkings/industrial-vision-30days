@@ -17,7 +17,8 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 1 | OpenCV 图像基础 | 已完成 | 读图、shape、像素、灰度图、缩放、ROI、图片保存 |
 | Day 2 | OpenCV 图像预处理 | 已完成 | 画框、文字、批处理、滤波、亮度/对比度、直方图、CLAHE、锐化 |
 | Day 3 | 阈值分割与形态学 | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
-| Day 4 | 边缘检测与轮廓基础 | 待开始 | Canny 边缘检测、轮廓查找、轮廓绘制与基础筛选 |
+| Day 4 | 边缘检测与轮廓分析 | 已完成 | Canny、轮廓查找、面积周长、外接矩形、OK/NG 规则 |
+| Day 5 | 几何特征与尺寸测量基础 | 待开始 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础 |
 
 当前已完成的主要练习：
 
@@ -41,6 +42,13 @@ week01-opencv/day03/test05_adaptive_threshold.py
 week01-opencv/day03/test06_erode_dilate.py
 week01-opencv/day03/test07_open_close.py
 week01-opencv/day03/test08_comprehensive.py
+
+week01-opencv/day04/test01_canny_basics.py
+week01-opencv/day04/test02_canny_threshold_comparison.py
+week01-opencv/day04/test03_find_draw_contours.py
+week01-opencv/day04/test04_contour_area_perimeter.py
+week01-opencv/day04/test05_bounding_rect.py
+week01-opencv/day04/test06_comprehensive.py
 ```
 
 ## 从这里继续
@@ -55,10 +63,10 @@ week01-opencv/day03/test08_comprehensive.py
 当前下一课：
 
 ```text
-Day 4
-第 1 部分：Canny 边缘检测
-第 2 部分：轮廓查找与绘制
-第 3 部分：轮廓面积、周长与基础筛选
+Day 5
+第 1 部分：轮廓中心与图像矩
+第 2 部分：旋转外接矩形
+第 3 部分：像素距离与尺寸标定基础
 ```
 
 ## 每课完成后的同步规则

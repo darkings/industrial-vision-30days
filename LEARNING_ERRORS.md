@@ -144,6 +144,55 @@ if image is None:
 打印提示不会终止程序，后续 `cv2.cvtColor(image, ...)` 仍会收到 `None`。
 本次已改为抛出 `FileNotFoundError`，让单张图片脚本立即终止。
 
+## E019：在新循环中误用上一个循环遗留的变量值
+
+日期与课程：2026-06-22，Day 4，外接矩形与目标筛选
+
+出错文件：
+
+```text
+week01-opencv/day04/test05_bounding_rect.py
+```
+
+错误逻辑：
+
+```python
+for contour in contours:
+    area = cv2.contourArea(contour)
+    if area >= min_area:
+        valid_contours.append(contour)
+
+for contour in valid_contours:
+    print(area)
+```
+
+实际现象：
+
+三个候选目标打印出的面积都为 `20.00`，与各自轮廓不对应。
+
+根本原因：
+
+Python 的 `for` 循环不会创建独立作用域。第一个循环结束后，`area` 仍然存在，但它只保存最后一次迭代的结果。本例最后处理的是面积为 `20.00` 的噪点，因此第二个循环反复打印了这个旧值。
+
+正确写法：
+
+```python
+for contour in valid_contours:
+    area = cv2.contourArea(contour)
+    x, y, width, height = cv2.boundingRect(contour)
+    print(area)
+```
+
+为什么这样修改：
+
+面积、外接矩形和其他特征都必须由当前循环中的同一条 `contour` 计算，才能保证数据与目标一一对应。
+
+以后如何避免：
+
+- 每次进入新的轮廓循环，都重新计算当前轮廓需要使用的特征。
+- 看到循环外或上一个循环遗留的变量时，确认它是否仍与当前对象对应。
+- 调试多目标程序时，检查每个目标输出是否异常地完全相同。
+
 ## E003：错误理解 `break` 和 `continue`
 
 日期与课程：Day 2，读取失败处理

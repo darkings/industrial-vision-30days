@@ -6,8 +6,8 @@ import cv2
 import numpy as np
 
 
-BASE_DIR = Path(__file__).resolve().parent
-OUTPUT_PATH = BASE_DIR / "images" / "day03_comprehensive_test.png"
+DAY_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_PATH = DAY_DIR / "images" / "day03_comprehensive_test.png"
 
 height = 480
 width = 640

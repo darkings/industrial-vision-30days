@@ -6,8 +6,8 @@ import cv2
 import numpy as np
 
 
-BASE_DIR = Path(__file__).resolve().parent
-OUTPUT_PATH = BASE_DIR / "images" / "morphology_test.png"
+DAY_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_PATH = DAY_DIR / "images" / "morphology_test.png"
 
 # 创建 640×480 的纯黑单通道图片。
 image = np.zeros((480, 640), dtype=np.uint8)
