@@ -2,7 +2,7 @@
 
 这是一个面向工业落地的高强度学习项目，目标是在 1 个月内完成可展示的工业视觉作品。
 
-最后更新：2026-06-22
+最后更新：2026-06-24
 
 主学习路线：
 
@@ -18,7 +18,7 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 2 | OpenCV 图像预处理 | 已完成 | 画框、文字、批处理、滤波、亮度/对比度、直方图、CLAHE、锐化 |
 | Day 3 | 阈值分割与形态学 | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
 | Day 4 | 边缘检测与轮廓分析 | 已完成 | Canny、轮廓查找、面积周长、外接矩形、OK/NG 规则 |
-| Day 5 | 几何特征与尺寸测量基础 | 待开始 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础 |
+| Day 5 | 几何特征与尺寸测量基础 | 已完成 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础 |
 
 当前已完成的主要练习：
 
@@ -49,6 +49,10 @@ week01-opencv/day04/test03_find_draw_contours.py
 week01-opencv/day04/test04_contour_area_perimeter.py
 week01-opencv/day04/test05_bounding_rect.py
 week01-opencv/day04/test06_comprehensive.py
+
+week01-opencv/day05/test01_contour_center.py
+week01-opencv/day05/test02_min_area_rect.py
+week01-opencv/day05/test03_pixel_measurement.py
 ```
 
 ## 从这里继续
@@ -63,10 +67,8 @@ week01-opencv/day04/test06_comprehensive.py
 当前下一课：
 
 ```text
-Day 5
-第 1 部分：轮廓中心与图像矩
-第 2 部分：旋转外接矩形
-第 3 部分：像素距离与尺寸标定基础
+Day 6
+待规划：OpenCV 几何测量综合练习或进入下一阶段内容
 ```
 
 ## 每课完成后的同步规则
@@ -120,7 +122,7 @@ Obsidian 笔记通过 iCloud 同步时，各系统上的本地绝对路径也可
 Day 3 笔记：
 
 ```text
-/Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision/Day03.md
+/Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision/Day03_阈值分割与形态学.md
 ```
 
 ## 在另一台电脑恢复环境

@@ -1,6 +1,6 @@
 # 学习进度与教学约定
 
-最后更新：2026-06-22
+最后更新：2026-06-24
 
 ## 学习背景
 
@@ -370,7 +370,7 @@ week01-opencv/day03/test08_comprehensive.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day03.md
+learning/IndustrialVision/Day03_阈值分割与形态学.md
 ```
 
 已于 2026-06-22 完成知识正确性、代码示例、Markdown 结构和工业风险检查，并加入实验结论、核心记忆与复习清单。
@@ -448,7 +448,7 @@ week01-opencv/day04/test06_comprehensive.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day04 边缘检测与轮廓分析.md
+learning/IndustrialVision/Day04_边缘检测与轮廓分析.md
 ```
 
 已完成知识、API、代码示例、实验结论、Markdown 和工业风险检查，并加入 Day 4 核心记忆与复习清单。
@@ -495,6 +495,85 @@ Day 5 起点：
 轮廓中心与图像矩
 旋转外接矩形
 像素距离与尺寸标定基础
+```
+
+## Day 5：几何特征与尺寸测量基础
+
+状态：代码、输出、笔记和理论验收已完成。
+
+已经掌握：
+
+- 使用 `cv2.moments()` 计算轮廓重心。
+- 区分 `boundingRect()` 外接矩形中心和 `moments()` 轮廓重心。
+- 理解轮廓重心不保证一定落在白色目标内部。
+- 使用 `cv2.minAreaRect()` 获取最小面积旋转矩形。
+- 使用 `cv2.boxPoints()` 将旋转矩形转换为 4 个角点。
+- 使用 `cv2.drawContours()` 绘制旋转矩形。
+- 理解倾斜目标不能只依赖水平外接矩形的 `width / height` 判断真实长宽比。
+- 使用标准件宽度计算 `mm_per_pixel`。
+- 将像素宽高换算为毫米尺寸。
+- 理解相机高度、工件高度、镜头、角度和畸变变化后，原有比例尺可能失效。
+- 理解 `findContours()` 返回顺序不可靠，不能直接把第一个轮廓当标准件。
+
+完成文件：
+
+```text
+week01-opencv/day05/test01_contour_center.py
+week01-opencv/day05/test02_min_area_rect.py
+week01-opencv/day05/test03_pixel_measurement.py
+```
+
+练习图片生成脚本：
+
+```text
+week01-opencv/day05/scripts/create_center_test_image.py
+week01-opencv/day05/scripts/create_rotated_rect_test_image.py
+week01-opencv/day05/scripts/create_measurement_test_image.py
+```
+
+Obsidian 笔记：
+
+```text
+learning/IndustrialVision/Day05_几何特征与尺寸测量基础.md
+```
+
+关键验证结果：
+
+```text
+轮廓中心练习：
+有效轮廓：4
+规则矩形/圆形：外接矩形中心与轮廓重心基本一致
+L 形/缺口目标：外接矩形中心与轮廓重心明显不同
+
+旋转外接矩形练习：
+绿色水平框：boundingRect
+红色旋转框：minAreaRect + boxPoints
+倾斜目标水平框包含大量空白，旋转框更贴合目标方向
+
+像素测量练习：
+标准件真实宽度：50 mm
+标准件像素宽度：251 px
+mm_per_pixel：约 0.1992 mm/px
+待测件宽度：约 36.1 mm
+待测件高度：约 32.1 mm
+```
+
+Day 5 核心记忆：
+
+```text
+OpenCV 默认测量单位是像素，不是毫米。
+boundingRect 看图像坐标系，minAreaRect 更接近目标自身方向。
+moments 可以算轮廓重心，但重心不一定落在目标内部。
+boxPoints 负责把旋转矩形转换成 4 个角点。
+mm_per_pixel = 已知真实尺寸 / 图像像素尺寸。
+相机、镜头、距离、工件平面变化后，比例尺可能失效。
+findContours 的返回顺序不可靠，目标身份必须通过规则确定。
+```
+
+Day 6 起点：
+
+```text
+待规划：OpenCV 几何测量综合练习或进入下一阶段内容
 ```
 
 ## 固定教学方法

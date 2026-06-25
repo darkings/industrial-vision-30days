@@ -1,6 +1,6 @@
 # 工业视觉学习错误知识库
 
-最后更新：2026-06-22
+最后更新：2026-06-24
 
 这不是一次性的错题清单，而是整个 30 天学习项目持续维护的错误知识库。
 
@@ -192,6 +192,50 @@ for contour in valid_contours:
 - 每次进入新的轮廓循环，都重新计算当前轮廓需要使用的特征。
 - 看到循环外或上一个循环遗留的变量时，确认它是否仍与当前对象对应。
 - 调试多目标程序时，检查每个目标输出是否异常地完全相同。
+
+## E020：`list.append()` 一次传入多个参数
+
+日期与课程：2026-06-24，Day 5，像素距离与尺寸标定基础
+
+出错文件：
+
+```text
+week01-opencv/day05/test03_pixel_measurement.py
+```
+
+错误代码：
+
+```python
+valid_contours.append(contour, x, y, width, height)
+```
+
+实际现象：
+
+程序报错：
+
+```text
+TypeError: list.append() takes exactly one argument (5 given)
+```
+
+根本原因：
+
+`list.append()` 一次只能向列表追加一个对象。`contour, x, y, width, height` 写成逗号分隔时，是 5 个独立参数，不是一个整体。
+
+正确代码：
+
+```python
+valid_contours.append((contour, x, y, width, height))
+```
+
+为什么这样修改：
+
+用小括号把多个相关值组成一个元组，这个元组才是一个对象。列表中保存的是每条有效轮廓及其对应的外接矩形数据。
+
+以后如何避免：
+
+- 需要把多项数据作为一组保存时，先用元组、列表或字典包起来。
+- `append(a, b, c)` 是错误写法；`append((a, b, c))` 才是向列表追加一组数据。
+- 多目标检测中，轮廓和它的 x、y、width、height 应保持绑定，避免后面排序或测量时数据错位。
 
 ## E003：错误理解 `break` 和 `continue`
 
