@@ -1,6 +1,6 @@
 # 工业视觉学习错误知识库
 
-最后更新：2026-06-24
+最后更新：2026-06-26
 
 这不是一次性的错题清单，而是整个 30 天学习项目持续维护的错误知识库。
 
@@ -236,6 +236,65 @@ valid_contours.append((contour, x, y, width, height))
 - 需要把多项数据作为一组保存时，先用元组、列表或字典包起来。
 - `append(a, b, c)` 是错误写法；`append((a, b, c))` 才是向列表追加一组数据。
 - 多目标检测中，轮廓和它的 x、y、width、height 应保持绑定，避免后面排序或测量时数据错位。
+
+## E021：把布尔判断变量当成测量值参与范围判断
+
+日期与课程：2026-06-26，Day 6，尺寸 OK/NG 判断
+
+出错文件：
+
+```text
+week01-opencv/day06/test03_size_ok_ng.py
+```
+
+错误代码：
+
+```python
+height_ok = False
+
+if 40.0 >= height_ok >= 38.0:
+    height_ok = True
+```
+
+实际现象：
+
+程序能运行，但高度判断逻辑错误。`height_ok` 是布尔变量，不是待测件高度毫米值，因此 NG/OK 原因可能不正确。
+
+根本原因：
+
+变量角色混淆：
+
+```text
+target_height_mm：测量值，单位是毫米。
+height_ok：判断结果，布尔值 True/False。
+```
+
+范围判断应该比较测量值，而不是比较判断结果。
+
+正确代码：
+
+```python
+height_ok = 38.0 <= target_height_mm <= 40.0
+```
+
+或：
+
+```python
+height_ok = False
+
+if 38.0 <= target_height_mm <= 40.0:
+    height_ok = True
+```
+
+为什么这样修改：
+
+OK/NG 判断必须先用实际测量值和规格范围比较，得到布尔结果，再根据布尔结果决定整体状态和 NG 原因。
+
+以后如何避免：
+
+- 变量名带 `_mm` 的通常是测量值，可以参与尺寸范围比较。
+- 变量名带 `_ok` 的通常是判断结果，只应该参与逻辑组合，例如 `if width_ok and height_ok`。
+- 写 OK/NG 规则时，先列出“测量值变量”和“判断结果变量”，避免混用。
 
 ## E003：错误理解 `break` 和 `continue`
 

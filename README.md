@@ -2,7 +2,7 @@
 
 这是一个面向工业落地的高强度学习项目，目标是在 1 个月内完成可展示的工业视觉作品。
 
-最后更新：2026-06-24
+最后更新：2026-06-27
 
 主学习路线：
 
@@ -19,6 +19,9 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 3 | 阈值分割与形态学 | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
 | Day 4 | 边缘检测与轮廓分析 | 已完成 | Canny、轮廓查找、面积周长、外接矩形、OK/NG 规则 |
 | Day 5 | 几何特征与尺寸测量基础 | 已完成 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础 |
+| Day 6 | OpenCV 几何测量综合检测 | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图 |
+| Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险 |
+| Day 8 | 工业相机与 GigE 接入预研 | 进行中 | MVS 可预览，Python 调海康 SDK 已在台式机抓到一帧 |
 
 当前已完成的主要练习：
 
@@ -53,6 +56,11 @@ week01-opencv/day04/test06_comprehensive.py
 week01-opencv/day05/test01_contour_center.py
 week01-opencv/day05/test02_min_area_rect.py
 week01-opencv/day05/test03_pixel_measurement.py
+
+week01-opencv/day06/test01_pipeline_preview.py
+week01-opencv/day06/test02_part_identification.py
+week01-opencv/day06/test03_size_ok_ng.py
+week01-opencv/day06/test04_detection_report.py
 ```
 
 ## 从这里继续
@@ -67,8 +75,57 @@ week01-opencv/day05/test03_pixel_measurement.py
 当前下一课：
 
 ```text
-Day 6
-待规划：OpenCV 几何测量综合练习或进入下一阶段内容
+Day 8
+工业相机与 GigE 接入预研
+下一步：复盘台式机 Python 调海康 SDK 抓帧代码，并封装 Camera 接口。
+```
+
+## 当前工业相机实测状态
+
+2026-06-27 已确认当前设备可以作为入门实操相机继续使用。
+
+设备信息：
+
+```text
+相机接口：GigE 网口
+MVS 识别型号：MV-13MG-E
+厂商显示：Machine Vision
+序列号：7A050E5PAK00046
+物理地址：24:52:6A:8F:E7:6C
+相机 IP：169.254.184.253
+子网掩码：255.255.255.0
+网关：169.254.184.254
+分辨率：1280 x 1024
+采集帧率：约 75 fps
+镜头：8mm 1:1.4
+```
+
+已完成验证：
+
+```text
+1. MVS 可以识别并打开该 GigE 相机。
+2. MVS 可以实时预览画面。
+3. 台式机上已使用 Python 调用海康 SDK 完整打开相机并抓到一帧。
+```
+
+当前缺少硬件：
+
+```text
+相机/镜头固定支架
+稳定光源
+```
+
+因此当前阶段只做“连接、取图、SDK 结构、Camera 接口封装”，暂不做稳定尺寸测量和标定。
+
+换电脑继续时优先检查：
+
+```text
+1. 安装 MVS / 海康 SDK。
+2. 网口相机和电脑网卡处在可通信网段。
+3. MVS 能枚举设备并预览。
+4. Python 能调用 SDK 打开设备并抓一帧。
+5. 将抓到的一帧转换为 OpenCV 可处理的 numpy.ndarray。
+6. 再接入 Day06 的检测流程。
 ```
 
 ## 每课完成后的同步规则
