@@ -12,10 +12,10 @@
 
 ## Python 环境策略
 
-项目统一使用根目录虚拟环境：
+项目统一使用项目根目录下的虚拟环境：
 
 ```text
-/home/jie/Projects/industrial-vision-30days/.venv
+industrial-vision-30days/.venv
 ```
 
 环境原则：
@@ -38,11 +38,18 @@ matplotlib：3.11.0
 旧环境 Git 跟踪文件：4518 个已取消跟踪
 ```
 
-激活命令：
+macOS 激活命令：
 
 ```bash
-cd ~/Projects/industrial-vision-30days
+cd /Users/jie/Projects.localized/industrial-vision-30days
 source .venv/bin/activate
+```
+
+Windows PowerShell 激活命令：
+
+```powershell
+cd D:\Projects\industrial-vision-30days
+.\.venv\Scripts\Activate.ps1
 ```
 
 已有 Day 1、Day 2 脚本已使用根环境完成语法、非交互运行和 OpenCV 处理逻辑验证。
@@ -370,7 +377,7 @@ week01-opencv/day03/test08_comprehensive.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day03_阈值分割与形态学.md
+IndustrialVision/Day03_阈值分割与形态学.md
 ```
 
 已于 2026-06-22 完成知识正确性、代码示例、Markdown 结构和工业风险检查，并加入实验结论、核心记忆与复习清单。
@@ -448,7 +455,7 @@ week01-opencv/day04/test06_comprehensive.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day04_边缘检测与轮廓分析.md
+IndustrialVision/Day04_边缘检测与轮廓分析.md
 ```
 
 已完成知识、API、代码示例、实验结论、Markdown 和工业风险检查，并加入 Day 4 核心记忆与复习清单。
@@ -534,7 +541,7 @@ week01-opencv/day05/scripts/create_measurement_test_image.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day05_几何特征与尺寸测量基础.md
+IndustrialVision/Day05_几何特征与尺寸测量基础.md
 ```
 
 关键验证结果：
@@ -614,7 +621,7 @@ week01-opencv/day06/scripts/create_pipeline_test_image.py
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day06_OpenCV几何测量综合检测.md
+IndustrialVision/Day06_OpenCV几何测量综合检测.md
 ```
 
 关键验证结果：
@@ -681,7 +688,7 @@ Day 7 起点：
 Obsidian 笔记：
 
 ```text
-learning/IndustrialVision/Day07_相机、镜头、光源、标定基础.md
+IndustrialVision/Day07_相机、镜头、光源、标定基础.md
 ```
 
 关键问答结论：
@@ -957,7 +964,7 @@ cv2.rectangle(
 Day 1 笔记位置：
 
 ```text
-C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\raw\industrial\Day 1.md
+IndustrialVision/Day 1.md
 ```
 
 笔记中已经修正：

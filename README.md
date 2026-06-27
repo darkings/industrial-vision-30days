@@ -12,16 +12,16 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 
 ## 当前学习状态
 
-| 日期 | 课程 | 状态 | 主要成果 |
-|---|---|---|---|
-| Day 1 | OpenCV 图像基础 | 已完成 | 读图、shape、像素、灰度图、缩放、ROI、图片保存 |
-| Day 2 | OpenCV 图像预处理 | 已完成 | 画框、文字、批处理、滤波、亮度/对比度、直方图、CLAHE、锐化 |
-| Day 3 | 阈值分割与形态学 | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算 |
-| Day 4 | 边缘检测与轮廓分析 | 已完成 | Canny、轮廓查找、面积周长、外接矩形、OK/NG 规则 |
-| Day 5 | 几何特征与尺寸测量基础 | 已完成 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础 |
-| Day 6 | OpenCV 几何测量综合检测 | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图 |
-| Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险 |
-| Day 8 | 工业相机与 GigE 接入预研 | 进行中 | MVS 可预览，Python 调海康 SDK 已在台式机抓到一帧 |
+| 日期  | 课程                       | 状态   | 主要成果                                                   |
+| ----- | -------------------------- | ------ | ---------------------------------------------------------- |
+| Day 1 | OpenCV 图像基础            | 已完成 | 读图、shape、像素、灰度图、缩放、ROI、图片保存             |
+| Day 2 | OpenCV 图像预处理          | 已完成 | 画框、文字、批处理、滤波、亮度/对比度、直方图、CLAHE、锐化 |
+| Day 3 | 阈值分割与形态学           | 已完成 | 固定阈值、OTSU、自适应阈值、腐蚀、膨胀、开闭运算           |
+| Day 4 | 边缘检测与轮廓分析         | 已完成 | Canny、轮廓查找、面积周长、外接矩形、OK/NG 规则            |
+| Day 5 | 几何特征与尺寸测量基础     | 已完成 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础                 |
+| Day 6 | OpenCV 几何测量综合检测    | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图               |
+| Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险              |
+| Day 8 | 工业相机与 GigE 接入预研   | 进行中 | MVS 可预览，Python 调海康 SDK 已在台式机抓到一帧           |
 
 当前已完成的主要练习：
 
@@ -154,32 +154,40 @@ MVS 识别型号：MV-13MG-E
 /Users/jie/Projects.localized/industrial-vision-30days
 ```
 
-当前 Obsidian 知识库中的工业视觉笔记目录：
+macOS Obsidian 工业视觉笔记目录：
 
 ```text
 /Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision
 ```
 
-### Ubuntu/WSL
+### Windows
 
 ```text
-/home/jie/Projects/industrial-vision-30days
+D:\Projects\industrial-vision-30days
 ```
 
-Windows 访问 WSL 项目的路径：
+Windows Obsidian 工业视觉笔记目录：
 
 ```text
-\\wsl.localhost\Ubuntu\home\jie\Projects\industrial-vision-30days
+C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision
 ```
 
 不同电脑的操作系统、用户名、Python 版本和绝对路径可以不同。项目源码通过 Git 同步，`.venv` 必须在每台电脑上根据 `requirements.txt` 单独创建；不要把某一台电脑的绝对路径用于程序代码。
 
-Obsidian 笔记通过 iCloud 同步时，各系统上的本地绝对路径也可能不同。当前 macOS 使用上方记录的目录。
+Obsidian 笔记通过 iCloud 同步。macOS 使用 macOS 路径，Windows 使用 Windows 路径。
 
 Day 3 笔记：
 
+macOS：
+
 ```text
 /Users/jie/Library/Mobile Documents/iCloud~md~obsidian/Documents/SecondBrain/learning/IndustrialVision/Day03_阈值分割与形态学.md
+```
+
+Windows：
+
+```text
+C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision\Day03_阈值分割与形态学.md
 ```
 
 ## 在另一台电脑恢复环境
@@ -196,10 +204,10 @@ industrial-vision-30days/.venv
 
 不要复制或继续使用另一台电脑中的 `.venv`。虚拟环境包含本机解释器和路径，应在新电脑重新创建。
 
-在 Ubuntu/WSL 中执行：
+在 macOS 中执行：
 
 ```bash
-cd ~/Projects/industrial-vision-30days
+cd /Users/jie/Projects.localized/industrial-vision-30days
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -208,31 +216,78 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
+在 Windows PowerShell 中执行：
+
+```powershell
+cd D:\Projects\industrial-vision-30days
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
 检查环境：
+
+macOS：
 
 ```bash
 python --version
 python -c "import cv2, numpy, matplotlib; print(cv2.__version__)"
 ```
 
+Windows PowerShell：
+
+```powershell
+python --version
+python -c "import cv2, numpy, matplotlib; print(cv2.__version__)"
+```
+
 日常进入项目后激活环境：
 
+macOS：
+
 ```bash
-cd ~/Projects/industrial-vision-30days
+cd /Users/jie/Projects.localized/industrial-vision-30days
 source .venv/bin/activate
 ```
 
+Windows PowerShell：
+
+```powershell
+cd D:\Projects\industrial-vision-30days
+.\.venv\Scripts\Activate.ps1
+```
+
 激活后，终端通常会显示 `(.venv)`。可以通过以下命令确认当前解释器来自项目根目录：
+
+macOS：
 
 ```bash
 which python
 python --version
 ```
 
+Windows PowerShell：
+
+```powershell
+where.exe python
+python --version
+```
+
 预期 Python 路径：
 
+macOS：
+
 ```text
-/home/jie/Projects/industrial-vision-30days/.venv/bin/python
+/Users/jie/Projects.localized/industrial-vision-30days/.venv/bin/python
+```
+
+Windows：
+
+```text
+D:\Projects\industrial-vision-30days\.venv\Scripts\python.exe
 ```
 
 ## Git 与虚拟环境
