@@ -2,7 +2,7 @@
 
 这是一个面向工业落地的高强度学习项目，目标是在 1 个月内完成可展示的工业视觉作品。
 
-最后更新：2026-06-27
+最后更新：2026-06-29
 
 主学习路线：
 
@@ -21,7 +21,8 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 5 | 几何特征与尺寸测量基础     | 已完成 | 轮廓中心、旋转矩形、像素距离与尺寸标定基础                 |
 | Day 6 | OpenCV 几何测量综合检测    | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图               |
 | Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险              |
-| Day 8 | 工业相机与 GigE 接入预研   | 进行中 | MVS 可预览，Python 调海康 SDK 已在台式机抓到一帧           |
+| Day 8 | 工业相机与 GigE 接入预研   | 已完成 | 海康 SDK 枚举设备、抓帧、参数查询、曝光对比实验             |
+| Day 9 | 相机抓帧接入 OpenCV 检测流程 | 进行中 | 读取真实相机图像，完成灰度统计、阈值分割和轮廓预览         |
 
 当前已完成的主要练习：
 
@@ -61,6 +62,15 @@ week01-opencv/day06/test01_pipeline_preview.py
 week01-opencv/day06/test02_part_identification.py
 week01-opencv/day06/test03_size_ok_ng.py
 week01-opencv/day06/test04_detection_report.py
+
+week02-camera/day08/test01_hik_sdk_grab_one_frame.py
+week02-camera/day08/test02_hik_sdk_structure_notes.py
+week02-camera/day08/test03_hik_camera_params_query.py
+week02-camera/day08/test04_hik_exposure_comparison.py
+week02-camera/day08/test04_exposure_image_stats_test.py
+
+week02-camera/day09/test01_camera_image_analysis.py
+week02-camera/day09/test01_camera_image_analysis_test.py
 ```
 
 ## 从这里继续
@@ -75,9 +85,9 @@ week01-opencv/day06/test04_detection_report.py
 当前下一课：
 
 ```text
-Day 8
-工业相机与 GigE 接入预研
-下一步：复盘台式机 Python 调海康 SDK 抓帧代码，并封装 Camera 接口。
+Day 9
+相机抓帧接入 OpenCV 检测流程
+下一步：调整阈值参数，观察二值图和轮廓数量变化。
 ```
 
 ## 当前工业相机实测状态
@@ -106,6 +116,8 @@ MVS 识别型号：MV-13MG-E
 1. MVS 可以识别并打开该 GigE 相机。
 2. MVS 可以实时预览画面。
 3. 台式机上已使用 Python 调用海康 SDK 完整打开相机并抓到一帧。
+4. 已查询 ExposureTime、Gain、TriggerMode、PixelFormat 等相机参数。
+5. 已完成 800 us、1000 us、1500 us 等曝光时间对比实验。
 ```
 
 当前缺少硬件：
@@ -115,7 +127,7 @@ MVS 识别型号：MV-13MG-E
 稳定光源
 ```
 
-因此当前阶段只做“连接、取图、SDK 结构、Camera 接口封装”，暂不做稳定尺寸测量和标定。
+因此当前阶段只做“连接、取图、SDK 结构、相机图像接入 OpenCV 流程”，暂不做稳定尺寸测量和标定。
 
 换电脑继续时优先检查：
 

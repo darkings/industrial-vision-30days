@@ -724,7 +724,7 @@ Day 8 起点：
 
 ## Day 8：工业相机与 GigE 接入预研
 
-状态：进行中。
+状态：已完成。
 
 当前实测结论：
 
@@ -759,6 +759,12 @@ MVS 识别型号：MV-13MG-E
 - 理解硬件触发可以稳定拍到工件到位后的完整图像。
 - 理解工业相机通常需要 SDK 负责枚举设备、打开设备、设置参数、取图和释放资源。
 - 理解黑白相机适合尺寸、轮廓、孔洞、缺陷检测。
+- 已完成海康 MVS Python SDK 抓一帧代码骨架。
+- 已完成学员跟写版 `test02_hik_sdk_structure_notes.py`。
+- 已查询相机参数：ExposureTime、Gain、AcquisitionFrameRate、TriggerMode、TriggerSource、PixelFormat。
+- 已确认 PixelFormat = 17301505 对应 Mono8。
+- 已完成曝光时间对比实验，并理解修改参数后要读回、等待稳定、丢弃缓存帧。
+- 已完成 Day08 独立复盘练习。
 
 当前硬件状态：
 
@@ -773,26 +779,96 @@ MVS 识别型号：MV-13MG-E
 MVS 连接确认
 Python SDK 抓帧代码复盘
 图像格式转换
-Camera 接口封装
-接入 Day06 检测流程
+相机参数查询
+曝光时间对比实验
+接入 Day09 OpenCV 检测流程前的准备
+```
+
+Day08 验收结果：
+
+```text
+1. 能说明工业相机为什么通常使用厂商 SDK，而不是只依赖 cv2.VideoCapture。
+2. 能复述 SDK 抓帧生命周期：加载 SDK、初始化、枚举设备、创建句柄、打开设备、开始采集、抓帧、转 numpy.ndarray、保存图像、停止取流、关闭设备、销毁句柄、反初始化 SDK。
+3. 能解释 GetImageBuffer 后必须 FreeImageBuffer，否则 SDK 内部 buffer 可能被占用。
+4. 能解释 ExposureTime、Gain、TriggerMode、PixelFormat 的作用。
+5. 能解释 ret[0x...] 中的 :x 是将整数格式化为十六进制显示。
+6. 已完成 800 us、1000 us、1500 us 曝光实验：
+   - 800 us：mean=59.44，max=160，overexposed=0.00%
+   - 1000 us：mean=74.45，max=200，overexposed=0.00%
+   - 1500 us：mean=112.19，max=255，overexposed=0.36%
+7. 当前更推荐 1000 us 作为 Day09 阈值分割入门练习曝光值：没有过曝，亮度比 800 us 更充足，风险比 1500 us 更低。
 ```
 
 下一步：
 
 ```text
-把台式机上已经跑通的 Python 调海康 SDK 抓一帧代码同步到项目中。
-建议文件名：
-week02-camera/day08/test01_hik_sdk_grab_one_frame.py
+Day 9：相机抓帧接入 OpenCV 检测流程。
+使用当前工业相机抓到的真实 Mono8 图像，进入灰度直方图、阈值分割、轮廓提取和检测流程接入。
+```
 
-之后复盘：
-1. 枚举设备
-2. 打开设备
-3. 设置取流参数
-4. 开始采集
-5. 抓取一帧
-6. 转换为 OpenCV 图像
-7. 保存图片
-8. 停止采集、关闭设备、释放资源
+## Day 9：相机抓帧接入 OpenCV 检测流程
+
+状态：进行中。
+
+Day09 第 1 节：读取 Day08 相机图像并做 OpenCV 分析。
+
+已完成代码：
+
+```text
+week02-camera/day09/test01_camera_image_analysis.py
+week02-camera/day09/test01_camera_image_analysis_test.py
+```
+
+输入图像：
+
+```text
+week02-camera/day08/outputs/exposure_comparison/step02_exposure_1000us.png
+```
+
+选择 1000 us 的原因：
+
+```text
+800 us 没有过曝，但 mean 偏低。
+1000 us 没有过曝，max=200，亮度更适合入门阈值分割。
+1500 us 已出现少量过曝，max=255。
+```
+
+本节实测结果：
+
+```text
+图像尺寸：1280 x 1024
+平均灰度：74.45
+灰度范围：0 到 200
+过曝比例：0.00%
+固定阈值：100
+有效轮廓数量：2
+```
+
+输出文件：
+
+```text
+week02-camera/day09/outputs/test01_camera_image_analysis/binary_threshold_100.png
+week02-camera/day09/outputs/test01_camera_image_analysis/contours_threshold_100.png
+week02-camera/day09/outputs/test01_camera_image_analysis/gray_histogram.png
+```
+
+验证结果：
+
+```text
+test01_camera_image_analysis_test.py：通过。
+test01_camera_image_analysis.py：运行成功。
+输出文件尺寸检查通过：
+- binary_threshold_100.png：1280 x 1024，L
+- contours_threshold_100.png：1280 x 1024，RGB
+- gray_histogram.png：800 x 400，RGBA
+```
+
+下一步：
+
+```text
+修改 threshold_value，例如 60、80、100、120、140。
+观察二值图白色区域、有效轮廓数量和轮廓框变化。
+学习如何根据直方图和轮廓结果选择阈值。
 ```
 
 ## 固定教学方法
@@ -888,6 +964,27 @@ Markdown 修改原则：
 5. 检查并完善当天 Obsidian 笔记。
 
 只有代码、理论、输出结果和项目文档全部同步后，该课才算正式完成。
+
+## 笔记协作方式
+
+从 Day09 开始，笔记按以下方式协作：
+
+```text
+1. 助手先讲解本节概念、API 参数、代码结构和实验观察点。
+2. 学员用自己的话记录概念笔记。
+3. 学员发“检查”后，助手检查概念是否准确、是否遗漏关键工业风险。
+4. 概念笔记中的少量遗漏、示范脚本结果、独立练习结果、输入输出路径和验收记录，由助手直接补充到 Obsidian 笔记。
+5. 练习代码由学员自己写；助手检查后指出问题，学员自己修改。
+6. 有学习价值的错误继续写入 LEARNING_ERRORS.md。
+```
+
+原则：
+
+```text
+概念理解由学员自己写。
+结果追溯、路径、参数、验收记录由助手补齐。
+代码练习中的错误优先让学员自己修改。
+```
 
 ## 教学代码注释规范
 

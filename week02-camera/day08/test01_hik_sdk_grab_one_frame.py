@@ -250,6 +250,7 @@ def convert_frame_to_numpy(sdk, cam, frame_out):
 
     if channel_count == 1:
         image = image.reshape((height, width))
+        image = image.copy()
     else:
         image = image.reshape((height, width, 3))
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
