@@ -22,7 +22,8 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 6 | OpenCV 几何测量综合检测    | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图               |
 | Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险              |
 | Day 8 | 工业相机与 GigE 接入预研   | 已完成 | 海康 SDK 枚举设备、抓帧、参数查询、曝光对比实验             |
-| Day 9 | 相机抓帧接入 OpenCV 检测流程 | 进行中 | 读取真实相机图像，完成灰度统计、阈值分割和轮廓预览         |
+| Day 9 | 相机抓帧接入 OpenCV 检测流程 | 进行中 | 已完成真实相机图像分析和多阈值对比，当前进入 OTSU 对比     |
+| Day 10 | 稳定成像系统搭建           | 待开始 | 支架、环形光源、光源控制器到货后，先固定成像系统           |
 
 当前已完成的主要练习：
 
@@ -70,7 +71,8 @@ week02-camera/day08/test04_hik_exposure_comparison.py
 week02-camera/day08/test04_exposure_image_stats_test.py
 
 week02-camera/day09/test01_camera_image_analysis.py
-week02-camera/day09/test01_camera_image_analysis_test.py
+week02-camera/day09/test02_camera_image_analysis.py
+week02-camera/day09/test03_threshold_comparison.py
 ```
 
 ## 从这里继续
@@ -87,7 +89,8 @@ week02-camera/day09/test01_camera_image_analysis_test.py
 ```text
 Day 9
 相机抓帧接入 OpenCV 检测流程
-下一步：调整阈值参数，观察二值图和轮廓数量变化。
+当前小节：第 3 节，OTSU 接入真实相机图像。
+下一步：在同一张 1000 us 相机图像上，对比固定阈值 100 和 OTSU 自动阈值的二值图、有效轮廓数量和适用性。
 ```
 
 ## 当前工业相机实测状态
@@ -120,14 +123,17 @@ MVS 识别型号：MV-13MG-E
 5. 已完成 800 us、1000 us、1500 us 等曝光时间对比实验。
 ```
 
-当前缺少硬件：
+当前硬件状态：
 
 ```text
-相机/镜头固定支架
-稳定光源
+GigE 工业相机：已到位
+镜头：已到位
+相机固定支架：已到位
+环形光源：已到位
+光源控制器：已到位
 ```
 
-因此当前阶段只做“连接、取图、SDK 结构、相机图像接入 OpenCV 流程”，暂不做稳定尺寸测量和标定。
+因此 Day09 先完成固定图片下的阈值理解；Day10 开始搭建稳定成像系统。正式尺寸测量、标定和 OK/NG 结论必须等支架、光源、曝光和连续抓图稳定性验证后再做。
 
 换电脑继续时优先检查：
 

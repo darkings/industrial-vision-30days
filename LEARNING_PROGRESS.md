@@ -770,10 +770,10 @@ MVS 识别型号：MV-13MG-E
 
 ```text
 已有：GigE 工业相机、8mm 镜头。
-暂缺：稳定支架、稳定光源。
+已到货：稳定支架、环形光源、光源控制器。
 ```
 
-因此当前不做稳定检测、尺寸标定和精密测量，只做：
+因此 Day09 先完成固定图片下的阈值理解；Day10 开始搭建稳定成像系统。在完成固定、光源、曝光和连续抓图稳定性验证前，仍不做正式稳定检测、尺寸标定和精密测量，只做：
 
 ```text
 MVS 连接确认
@@ -810,13 +810,20 @@ Day 9：相机抓帧接入 OpenCV 检测流程。
 
 状态：进行中。
 
-Day09 第 1 节：读取 Day08 相机图像并做 OpenCV 分析。
+Day09 第 1 节：读取 Day08 相机图像并做 OpenCV 分析，已完成。
+
+当前学习入口：
+
+```text
+Day09 第 3 节：OTSU 接入真实相机图像。
+```
 
 已完成代码：
 
 ```text
 week02-camera/day09/test01_camera_image_analysis.py
-week02-camera/day09/test01_camera_image_analysis_test.py
+week02-camera/day09/test02_camera_image_analysis.py
+week02-camera/day09/test03_threshold_comparison.py
 ```
 
 输入图像：
@@ -855,8 +862,8 @@ week02-camera/day09/outputs/test01_camera_image_analysis/gray_histogram.png
 验证结果：
 
 ```text
-test01_camera_image_analysis_test.py：通过。
 test01_camera_image_analysis.py：运行成功。
+test02_camera_image_analysis.py：已作为学员独立练习脚本保存。
 输出文件尺寸检查通过：
 - binary_threshold_100.png：1280 x 1024，L
 - contours_threshold_100.png：1280 x 1024，RGB
@@ -866,9 +873,26 @@ test01_camera_image_analysis.py：运行成功。
 下一步：
 
 ```text
-修改 threshold_value，例如 60、80、100、120、140。
-观察二值图白色区域、有效轮廓数量和轮廓框变化。
-学习如何根据直方图和轮廓结果选择阈值。
+Day09 第 3 节：OTSU 接入真实相机图像。
+在同一张 1000 us 图像上，对比固定阈值 100 和 OTSU 自动阈值。
+重点观察 OTSU 自动算出的阈值、二值图效果、有效轮廓数量和是否适合当前图像。
+```
+
+Day09 第 2 节完成记录：
+
+```text
+练习文件：week02-camera/day09/test03_threshold_comparison.py
+对比阈值：60、80、100、120、140
+核心结论：阈值越高，白色区域和最大有效轮廓面积整体变小；原始轮廓数量不能直接代表目标数量，因为噪点、背景纹理和反光也会形成轮廓。
+当前固定阈值参考值：100。
+```
+
+硬件状态更新：
+
+```text
+相机固定支架、环形光源、光源控制器已经到货。
+Day09 完成多阈值对比后，Day10 优先进入稳定成像系统搭建。
+暂不急着进入 YOLO，也不急着做正式尺寸 OK/NG。
 ```
 
 ## 固定教学方法
