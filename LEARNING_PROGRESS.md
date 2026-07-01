@@ -815,7 +815,7 @@ Day09 第 1 节：读取 Day08 相机图像并做 OpenCV 分析，已完成。
 当前学习入口：
 
 ```text
-Day09 第 3 节：OTSU 接入真实相机图像。
+Day10 第 1 节：硬件安装与安全检查。
 ```
 
 已完成代码：
@@ -824,6 +824,9 @@ Day09 第 3 节：OTSU 接入真实相机图像。
 week02-camera/day09/test01_camera_image_analysis.py
 week02-camera/day09/test02_camera_image_analysis.py
 week02-camera/day09/test03_threshold_comparison.py
+week02-camera/day09/test04_otsu_comparison.py
+week02-camera/day09/test05_morphology_cleanup.py
+week02-camera/day09/test06_frame_analysis_function.py
 ```
 
 输入图像：
@@ -873,9 +876,9 @@ test02_camera_image_analysis.py：已作为学员独立练习脚本保存。
 下一步：
 
 ```text
-Day09 第 3 节：OTSU 接入真实相机图像。
-在同一张 1000 us 图像上，对比固定阈值 100 和 OTSU 自动阈值。
-重点观察 OTSU 自动算出的阈值、二值图效果、有效轮廓数量和是否适合当前图像。
+Day10 第 1 节：硬件安装与安全检查。
+确认支架、相机、镜头、环形光源和光源控制器连接稳定。
+先固定成像系统，再重新选择曝光、阈值和检测规则。
 ```
 
 Day09 第 2 节完成记录：
@@ -885,6 +888,56 @@ Day09 第 2 节完成记录：
 对比阈值：60、80、100、120、140
 核心结论：阈值越高，白色区域和最大有效轮廓面积整体变小；原始轮廓数量不能直接代表目标数量，因为噪点、背景纹理和反光也会形成轮廓。
 当前固定阈值参考值：100。
+```
+
+Day09 第 3 节完成记录：
+
+```text
+练习文件：week02-camera/day09/test04_otsu_comparison.py
+固定阈值：100.0，有效轮廓数量 8，最大有效轮廓面积 55050.0
+OTSU 自动阈值：79.0，有效轮廓数量 3，最大有效轮廓面积 827800.5
+核心结论：OTSU 阈值更低，白色区域更多，更容易把主要物体连成一大片；适合保留完整物体轮廓，但不一定适合分辨局部细节或缺陷。
+注意：当前 step02_exposure_1000us.png 图片版本的灰度统计与 Day09 第 1 节早期记录不同，后续结果按当前图片版本记录。
+```
+
+Day09 第 4 节完成记录：
+
+```text
+练习文件：week02-camera/day09/test05_morphology_cleanup.py
+原始 OTSU：白色像素比例 57.59%，原始轮廓 6439，有效轮廓 3，最大面积 827800.5
+开运算 5x5：白色像素比例 49.58%，原始轮廓 138，有效轮廓 1，最大面积 715708.5
+闭运算 5x5：白色像素比例 65.86%，原始轮廓 605，有效轮廓 1，最大面积 927802.0
+核心结论：开运算清理白色小噪点但可能丢失白色细节；闭运算补黑洞和断裂但可能掩盖裂纹、孔洞、缺口。形态学处理必须服务检测目标，不能只追求图像干净。
+```
+
+Day09 第 5 节完成记录：
+
+```text
+练习文件：week02-camera/day09/test06_frame_analysis_function.py
+核心函数：analyze_frame(frame, filter_area, output_dir)
+运行结果：OTSU 阈值 79.0，开运算后原始轮廓 138，有效轮廓 1，最大面积 715708.5。
+核心结论：图片输入和 SDK 相机帧输入应该复用同一套 analyze_frame() 分析流程。SDK 负责抓图并转换为 numpy.ndarray，analyze_frame() 负责灰度、OTSU、形态学、轮廓和统计结果。
+```
+
+## Day 9：完成总结
+
+状态：已完成。
+
+已经掌握：
+
+```text
+1. 读取真实相机图像并统计灰度、过曝和轮廓信息。
+2. 使用多阈值对比观察白色区域、轮廓数量和最大轮廓面积变化。
+3. 使用 OTSU 自动阈值作为固定阈值的参考。
+4. 使用开运算和闭运算观察真实二值图清理效果。
+5. 将图像分析流程封装为 analyze_frame(frame, output_dir)，为 SDK 相机帧接入做准备。
+```
+
+Day09 边界：
+
+```text
+Day09 只验证真实图像接入 OpenCV 分析流程，不做正式尺寸测量、稳定标定和最终 OK/NG 结论。
+Day10 开始进入支架、环形光源和光源控制器到位后的稳定成像系统搭建。
 ```
 
 硬件状态更新：

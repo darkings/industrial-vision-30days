@@ -22,7 +22,7 @@ OpenCV -> YOLO -> PaddleOCR -> 缺陷检测 -> 工业视觉项目整合
 | Day 6 | OpenCV 几何测量综合检测    | 已完成 | 检测流水线、目标识别、尺寸 OK/NG、检测报告图               |
 | Day 7 | 相机、镜头、光源、标定基础 | 已完成 | FOV、像素精度、焦距、景深、光源选择、标定风险              |
 | Day 8 | 工业相机与 GigE 接入预研   | 已完成 | 海康 SDK 枚举设备、抓帧、参数查询、曝光对比实验             |
-| Day 9 | 相机抓帧接入 OpenCV 检测流程 | 进行中 | 已完成真实相机图像分析和多阈值对比，当前进入 OTSU 对比     |
+| Day 9 | 相机抓帧接入 OpenCV 检测流程 | 已完成 | 完成真实图像分析、多阈值、OTSU、形态学和 frame 分析封装    |
 | Day 10 | 稳定成像系统搭建           | 待开始 | 支架、环形光源、光源控制器到货后，先固定成像系统           |
 
 当前已完成的主要练习：
@@ -73,6 +73,9 @@ week02-camera/day08/test04_exposure_image_stats_test.py
 week02-camera/day09/test01_camera_image_analysis.py
 week02-camera/day09/test02_camera_image_analysis.py
 week02-camera/day09/test03_threshold_comparison.py
+week02-camera/day09/test04_otsu_comparison.py
+week02-camera/day09/test05_morphology_cleanup.py
+week02-camera/day09/test06_frame_analysis_function.py
 ```
 
 ## 从这里继续
@@ -89,8 +92,9 @@ week02-camera/day09/test03_threshold_comparison.py
 ```text
 Day 9
 相机抓帧接入 OpenCV 检测流程
-当前小节：第 3 节，OTSU 接入真实相机图像。
-下一步：在同一张 1000 us 相机图像上，对比固定阈值 100 和 OTSU 自动阈值的二值图、有效轮廓数量和适用性。
+Day 10
+稳定成像系统搭建
+下一步：先做硬件安装与安全检查，确认支架、相机、镜头、环形光源和光源控制器连接稳定。
 ```
 
 ## 当前工业相机实测状态
