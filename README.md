@@ -90,11 +90,59 @@ week02-camera/day09/test06_frame_analysis_function.py
 当前下一课：
 
 ```text
-Day 9
-相机抓帧接入 OpenCV 检测流程
 Day 10
 稳定成像系统搭建
 下一步：先做硬件安装与安全检查，确认支架、相机、镜头、环形光源和光源控制器连接稳定。
+```
+
+## 当前换到 Windows 继续学习提示
+
+当前准备从 macOS 切换到 Windows 电脑继续学习。
+
+Windows 继续入口：
+
+```text
+Day10 第 1 节：硬件安装与安全检查
+```
+
+当前状态：
+
+```text
+Day01-Day09 已完成。
+Day10 理论笔记已完成并检查。
+当前不要继续调 Day09 旧图像阈值。
+下一步应先在 Windows 上确认硬件、MVS、SDK、相机连接和稳定成像系统。
+```
+
+Windows 项目目录：
+
+```text
+D:\Projects\industrial-vision-30days
+```
+
+Windows Obsidian 笔记目录：
+
+```text
+C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision
+```
+
+Windows 继续前先做：
+
+```text
+1. 拉取或同步项目源码。
+2. 根据 requirements.txt 重新创建 .venv，不复制 macOS 的 .venv。
+3. 安装并打开 MVS / 海康 SDK。
+4. 确认 GigE 相机能在 MVS 中枚举并预览。
+5. 确认 Python 能调用 SDK 抓到一帧。
+6. 再开始 Day10 第 1 节硬件安装与安全检查。
+```
+
+Day10 的学习边界：
+
+```text
+先固定支架、相机、镜头、环形光源和光源控制器。
+先让图像稳定，再重新选择曝光、阈值和检测规则。
+暂不做正式 OK/NG、尺寸标定、YOLO、OCR 或复杂触发联动。
 ```
 
 ## 当前工业相机实测状态
