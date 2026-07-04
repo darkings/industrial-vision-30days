@@ -1,4 +1,9 @@
 indent-width = 2
 
+[lint.per-file-ignores]
+"*.py" = ["E402"]
+
 [format]
+quote-style = "double"
 indent-style = "space"
+

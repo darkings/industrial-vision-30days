@@ -1,0 +1,20 @@
+{
+  "image_width": 1280,
+  "image_height": 1024,
+  "otsu_threshold": 128.0,
+  "raw_contour_count": 405,
+  "valid_contour_count": 1,
+  "status": "OK",
+  "reason": "target matched rules",
+  "objects": [
+    {
+      "index": 1,
+      "x": 600,
+      "y": 332,
+      "w": 235,
+      "h": 157,
+      "area": 26760.5,
+      "aspect_ratio": 1.497
+    }
+  ]
+}
