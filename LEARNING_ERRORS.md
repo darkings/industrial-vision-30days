@@ -25,6 +25,190 @@
 
 # 一、实际错误记录
 
+## E025：面积范围判断条件上下限写反
+
+日期与课程：2026-07-06，Day12，检测流程配置化
+
+出错文件：
+
+```text
+week02-camera/day12/test02_configurable_pipeline.py
+```
+
+错误代码：
+
+```python
+if target["area"] > min_area or target["area"] < max_area:
+    return "NG", "area out of range"
+```
+
+实际现象：
+
+配置中的面积合格范围是：
+
+```text
+min_area = 10000
+max_area = 50000
+```
+
+检测结果中的目标面积约为：
+
+```text
+area = 26725.5
+```
+
+该面积明明位于 `10000 ~ 50000` 范围内，但 JSON 输出仍然是：
+
+```json
+"status": "NG",
+"reason": "area out of range"
+```
+
+根本原因：
+
+范围判断的方向写反了。`area > min_area` 对绝大多数合格目标都会成立，`area < max_area` 也会对绝大多数合格目标成立。两者用 `or` 连接后，合格目标反而几乎都会被判为 NG。
+
+正确代码：
+
+```python
+if target["area"] < min_area or target["area"] > max_area:
+    return "NG", "area out of range"
+```
+
+也可以写成更接近自然语言的形式：
+
+```python
+if not (min_area <= target["area"] <= max_area):
+    return "NG", "area out of range"
+```
+
+为什么这样修改：
+
+OK/NG 判断中的范围规则应该表达为：
+
+```text
+小于下限 -> NG
+大于上限 -> NG
+位于下限和上限之间 -> OK
+```
+
+以后如何避免：
+
+- 写范围判断时先用一句中文描述规则，再翻译成代码。
+- 对于 `min <= value <= max` 这类规则，优先使用 Python 链式比较。
+- 看到 `min_area` 和 `max_area` 时，检查是否是“低于 min 或高于 max”才判 NG。
+
+## E026：批量汇总统计时 NG 分支错误累加 total
+
+日期与课程：2026-07-06，Day12，批量验证
+
+出错文件：
+
+```text
+week02-camera/day12/test03_batch_validation.py
+```
+
+错误代码：
+
+```python
+data["total"] += 1
+if status == "OK":
+    data["ok_count"] += 1
+else:
+    data["total"] += 1
+```
+
+实际现象或潜在后果：
+
+当某张图片判定为 NG 时，程序没有增加 `ng_count`，而是再次增加 `total`。这会导致汇总结果中总数和 OK/NG 数量不一致：
+
+```text
+total != ok_count + ng_count
+```
+
+根本原因：
+
+批量统计中，每处理一张图片，`total` 只能增加一次。随后应根据状态分别增加 `ok_count` 或 `ng_count`。
+
+正确代码：
+
+```python
+data["total"] += 1
+if status == "OK":
+    data["ok_count"] += 1
+else:
+    data["ng_count"] += 1
+```
+
+为什么这样修改：
+
+`total` 表示处理图片总数，`ok_count` 和 `ng_count` 表示分类数量。三者应满足：
+
+```text
+total = ok_count + ng_count
+```
+
+以后如何避免：
+
+- 写批量统计时，最后检查汇总字段之间是否满足数学关系。
+- 每一轮循环只增加一次 `total`。
+- 状态分类字段只在对应分支中增加，例如 OK 增加 `ok_count`，NG 增加 `ng_count`。
+
+## E027：ROI 裁剪时把切片冒号写成逗号
+
+日期与课程：2026-07-06，Day13，ROI 基础概念
+
+出错文件：
+
+```text
+C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision\Day13_ROI+模板匹配.md
+```
+
+错误代码：
+
+```python
+roi_image = image[roi_y, roi_y + roi_h, roi_x, roi_x + w]
+```
+
+实际现象或潜在后果：
+
+这不是 ROI 裁剪写法。NumPy 图像通常是二维或三维数组，这种逗号写法表示多个维度索引，不是区间切片。轻则直接报索引错误，重则取到完全错误的数据。
+
+根本原因：
+
+ROI 裁剪需要使用切片范围，范围用冒号 `:` 表示。图像数组的顺序是：
+
+```text
+image[y1:y2, x1:x2]
+```
+
+正确代码：
+
+```python
+roi_image = image[roi_y:roi_y + roi_h, roi_x:roi_x + roi_w]
+```
+
+或：
+
+```python
+x = roi_config["x"]
+y = roi_config["y"]
+w = roi_config["w"]
+h = roi_config["h"]
+
+roi_image = image[y:y + h, x:x + w]
+```
+
+为什么这样修改：
+
+NumPy 裁剪图片时，第一段是行方向，也就是 `y` 和高度；第二段是列方向，也就是 `x` 和宽度。
+
+以后如何避免：
+
+- ROI 配置和画框常用 `x, y, w, h`。
+- NumPy 裁剪必须写成 `[y1:y2, x1:x2]`。
+- 看到 ROI 裁剪时先默念：先 y 后 x，切片用冒号。
+
 ## E001：`is_file` 方法没有调用
 
 日期与课程：Day 1，批量读取图片

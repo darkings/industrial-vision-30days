@@ -1,0 +1,58 @@
+{
+  "image_width": 1280,
+  "image_height": 1024,
+  "otsu_threshold": 121.0,
+  "raw_contour_count": 386,
+  "valid_contour_count": 1,
+  "status": "OK",
+  "reason": "target matched rules",
+  "objects": [
+    {
+      "index": 1,
+      "x": 608,
+      "y": 345,
+      "w": 237,
+      "h": 163,
+      "area": 26731.5,
+      "aspect_ratio": 1.454
+    }
+  ],
+  "config": {
+    "camera": {
+      "exposure_time": 1200,
+      "discard_frames": 5
+    },
+    "preprocess": {
+      "gaussian_kernel_size": [
+        5,
+        5
+      ]
+    },
+    "contour_filter": {
+      "min_area": 1000,
+      "margin": 30,
+      "min_aspect_ratio": 0.5,
+      "max_aspect_ratio": 5.0
+    },
+    "draw": {
+      "rectangle": {
+        "thickness": 1,
+        "color": [
+          0,
+          255,
+          0
+        ]
+      }
+    },
+    "judge": {
+      "expected_count": 1,
+      "min_area": 10000,
+      "max_area": 50000,
+      "min_aspect_ratio": 0.5,
+      "max_aspect_ratio": 5.0
+    },
+    "outputs": {
+      "dir_name": "configurable_pipeline"
+    }
+  }
+}

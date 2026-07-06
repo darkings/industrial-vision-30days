@@ -1,0 +1,43 @@
+{
+  "run_mode":"local",
+  "camera": {
+    "exposure_time": 1200,
+    "discard_frames": 5,
+    "capture_count":10
+  },
+  "local_images": {
+    "dir_path": "batch_inputs",
+    "valid_extensions": [
+      ".png",
+      ".jpg",
+      ".bmp"
+    ]
+  },
+  "preprocess":{
+    "gaussian_kernel_size":[5,5]
+  },
+  "contour_filter": {
+    "min_area": 1000,
+    "margin": 30,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "draw":{
+    "rectangle":{
+      "thickness":1,
+      "color":[0,255,0]
+    }
+  },
+  "judge": {
+    "expected_count": 1,
+    "min_area": 10000,
+    "max_area": 50000,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "outputs": {
+    "dir_name": "batch_validation",
+    "sample_prefix":"sample",
+    "summary_filename": "summary.json"
+  }
+}
