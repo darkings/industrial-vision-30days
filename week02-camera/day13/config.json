@@ -1,0 +1,88 @@
+{
+  "run_mode": "local",
+  "camera": {
+    "exposure_time": 1200,
+    "discard_frames": 5,
+    "capture_count": 10
+  },
+  "local_images": {
+    "dir_path": "batch_inputs",
+    "valid_extensions": [
+      ".png",
+      ".jpg",
+      ".bmp"
+    ],
+    "read_count":1
+  },
+  "roi": {
+    "x": 100,
+    "y": 150,
+    "w": 350,
+    "h": 500,
+    "thickness": 1,
+    "color":[0,255,255]
+  },
+  "template_matching": {
+    "enable": true,
+    "method": "TM_CCOEFF_NORMED",
+    "threshold": 0.85,
+    "template":{
+      "x": 170,
+      "y": 240,
+      "w": 80,
+      "h": 80
+    }
+  },
+  "preprocess": {
+    "gaussian_kernel_size": [
+      5,
+      5
+    ],
+    "binary":{
+      "enable":true,
+      "threshold":0,
+      "max_value":255,
+      "type":"OTSU_INV"
+    }
+  },
+  "contour_filter": {
+    "min_area": 1000,
+    "margin": 30,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "draw": {
+    "contour": {
+      "thickness": 1,
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    "template":{
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "thickness": 1
+    },
+    "roi":{
+      "color":[0,255,255],
+      "thickness":1
+    }
+  },
+  "judge": {
+    "expected_count": 1,
+    "min_area": 10000,
+    "max_area": 50000,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "outputs": {
+    "dir_name": "roi_template_comparison",
+    "sample_prefix": "sample",
+    "summary_filename": "summary.json"
+  }
+}

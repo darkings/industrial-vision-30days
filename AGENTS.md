@@ -2,23 +2,20 @@
 
 本文件是 `industrial-vision-30days` 项目的助手协作规则。以后新会话、新电脑或上下文丢失时，先读本文件，再继续学习。
 
-## 当前学习入口
+## 项目入口
 
 ```text
-当前进度：Day11 已完成。
-下一课：Day12 检测流程封装、配置化与批量验证。
 当前项目目录：D:\Projects\industrial-vision-30days
 Windows Obsidian 笔记目录：C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision
 ```
 
-当前后续节奏：
+继续学习时的入口判断：
 
 ```text
-Day12：检测流程封装 + 配置化 + 批量验证
-Day13：ROI + 模板匹配
-Day14：传统视觉小项目整合
-Day15：YOLO 环境与数据集概念
-Day16：YOLO 推理与小数据集准备
+1. 先读本文件，确认协作规则、路径规则和文档维护规则。
+2. 再读 30_DAY_LEARNING_PLAN.md，确认阶段路线。
+3. 再读 Obsidian 当天笔记，确认真实学习进度和下一节内容。
+4. 不在 AGENTS.md 中维护“当前进度”或“下一课”，避免过期。
 ```
 
 ## 文档更新规则
@@ -72,6 +69,7 @@ Obsidian 当天笔记
 用途：维护 30 天总体路线、Day12-Day16 等阶段计划。
 更新时机：学习路线变化、天级安排变化、用户要求重新规划。
 不做：每节课完成后的流水账同步。
+可以记录阶段路线和天级安排，但不要承担逐节进度记录。
 ```
 
 `README.md`：
@@ -89,14 +87,31 @@ Obsidian 当天笔记
 原因：进度信息改由 AGENTS.md、30_DAY_LEARNING_PLAN.md 和 Obsidian 当天笔记维护。
 ```
 
-`LEARNING_ERRORS.md`：
+`_LearningErrors.md`：
 
 ```text
-用途：个人错误知识库。
+用途：个人错误知识库，存放在 Obsidian 中。
 当前状态：继续维护。
-维护规则：只记录有学习价值的错误，例如 API 误用、坐标/shape 混淆、资源释放问题、JSON 结构设计错误、检测结果不可追溯等。
+维护规则：只记录错误本身，例如 API 误用、坐标/shape/ROI 混淆、资源释放问题、JSON 结构设计错误、检测结果不可追溯等。
 不记录：普通拼写、临时变量名、无长期复盘价值的小笔误。
 重复错误：在原错误条目下追加重复出现记录。
+```
+
+错误记录规则：
+
+```text
+1. 根目录不再维护 LEARNING_ERRORS.md。
+2. 所有值得复盘的错误统一写入 Obsidian 的 _LearningErrors.md。
+3. 错误库不按天数记录，只记录错误条目。
+4. 当天课程笔记只保留必要的“本节易错点”和关键结论，不承担完整错误库职责。
+5. 无长期价值的小拼写、临时变量名、手滑类问题，不记录到错误库。
+6. 如果同类错误重复出现，在 _LearningErrors.md 原条目下追加重复记录。
+```
+
+Obsidian 错误笔记路径：
+
+```text
+C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVision\_LearningErrors.md
 ```
 
 `task_plan.md`、`progress.md`、`findings.md`：
@@ -251,9 +266,11 @@ C:\Users\Jie\iCloudDrive\iCloud~md~obsidian\SecondBrain\learning\IndustrialVisio
 
 macOS 和 Windows 都可以学习。在哪台电脑学习，就使用那台电脑的本地路径。不要把 Windows 路径硬写进 macOS 代码，也不要把 macOS 路径硬写进 Windows 代码。
 
-## 下一步
+## 进度记录规则
 
 ```text
-从 Day12 第 1 节开始：
-检测 pipeline 封装。
+AGENTS.md 不维护当前进度和下一课。
+真实学习进度以 Obsidian 当天笔记、当天代码和 outputs 为准。
+路线调整才更新 30_DAY_LEARNING_PLAN.md。
+项目入口、环境、硬件、协作规则变化才更新 README.md 或 AGENTS.md。
 ```
