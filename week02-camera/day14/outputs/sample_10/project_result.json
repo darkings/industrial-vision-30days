@@ -1,0 +1,32 @@
+{
+  "mode": "detect",
+  "source_id": "Camera_10",
+  "source_type": "camera",
+  "status": "OK",
+  "reason": "template score >= threshold",
+  "best_score": 0.9476526379585266,
+  "threshold": 0.85,
+  "best_loc_roi": {
+    "x": 262,
+    "y": 326
+  },
+  "best_loc_global": {
+    "x": 547,
+    "y": 411
+  },
+  "roi": {
+    "x": 285,
+    "y": 85,
+    "w": 615,
+    "h": 685
+  },
+  "template_size": {
+    "width": 80,
+    "height": 90
+  },
+  "outputs": {
+    "original": "outputs/sample_10/original.png",
+    "roi": "outputs/sample_10/roi.png",
+    "result": "outputs/sample_10/result.png"
+  }
+}

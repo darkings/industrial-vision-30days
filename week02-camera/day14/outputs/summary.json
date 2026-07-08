@@ -1,0 +1,342 @@
+{
+  "total_count": 10,
+  "ok_count": 10,
+  "ng_count": 0,
+  "best_score": {
+    "min": 0.9471907615661621,
+    "max": 0.947795569896698,
+    "mean": 0.9474360167980194
+  },
+  "best_loc_global": {
+    "x_min": 547,
+    "x_max": 547,
+    "x_mean": 547.0,
+    "y_min": 411,
+    "y_max": 411,
+    "y_mean": 411.0,
+    "x_range": 0,
+    "y_range": 0
+  },
+  "items": [
+    {
+      "mode": "detect",
+      "source_id": "Camera_01",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9476154446601868,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_01/original.png",
+        "roi": "outputs/sample_01/roi.png",
+        "result": "outputs/sample_01/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_02",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.947795569896698,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_02/original.png",
+        "roi": "outputs/sample_02/roi.png",
+        "result": "outputs/sample_02/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_03",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9471926093101501,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_03/original.png",
+        "roi": "outputs/sample_03/roi.png",
+        "result": "outputs/sample_03/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_04",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9473463296890259,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_04/original.png",
+        "roi": "outputs/sample_04/roi.png",
+        "result": "outputs/sample_04/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_05",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9476491212844849,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_05/original.png",
+        "roi": "outputs/sample_05/roi.png",
+        "result": "outputs/sample_05/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_06",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9474195241928101,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_06/original.png",
+        "roi": "outputs/sample_06/roi.png",
+        "result": "outputs/sample_06/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_07",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.94725102186203,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_07/original.png",
+        "roi": "outputs/sample_07/roi.png",
+        "result": "outputs/sample_07/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_08",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9471907615661621,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_08/original.png",
+        "roi": "outputs/sample_08/roi.png",
+        "result": "outputs/sample_08/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_09",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9472471475601196,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_09/original.png",
+        "roi": "outputs/sample_09/roi.png",
+        "result": "outputs/sample_09/result.png"
+      }
+    },
+    {
+      "mode": "detect",
+      "source_id": "Camera_10",
+      "source_type": "camera",
+      "status": "OK",
+      "reason": "template score >= threshold",
+      "best_score": 0.9476526379585266,
+      "threshold": 0.85,
+      "best_loc_roi": {
+        "x": 262,
+        "y": 326
+      },
+      "best_loc_global": {
+        "x": 547,
+        "y": 411
+      },
+      "roi": {
+        "x": 285,
+        "y": 85,
+        "w": 615,
+        "h": 685
+      },
+      "template_size": {
+        "width": 80,
+        "height": 90
+      },
+      "outputs": {
+        "original": "outputs/sample_10/original.png",
+        "roi": "outputs/sample_10/roi.png",
+        "result": "outputs/sample_10/result.png"
+      }
+    }
+  ]
+}

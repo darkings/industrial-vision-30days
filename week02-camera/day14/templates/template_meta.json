@@ -1,0 +1,11 @@
+{
+  "source": "camera",
+  "template_box": {
+    "x": 540,
+    "y": 480,
+    "w": 80,
+    "h": 90
+  },
+  "template_size": "80 x 90",
+  "created_at": "2026-07-08 16:00:47"
+}
