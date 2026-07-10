@@ -1,0 +1,31 @@
+{
+  "image_path": "original.png",
+  "model": "yolov8n.pt",
+  "box_count": 1,
+  "judge": {
+    "expected_class_name": "cell phone",
+    "min_confidence": 0.5,
+    "expected_count": 1,
+    "matched_count": 0,
+    "status": "NG",
+    "reason": "low_confidence"
+  },
+  "detections": [
+    {
+      "index": 1,
+      "class_id": 67,
+      "class_name": "cell phone",
+      "confidence": 0.3477994501590729,
+      "bbox_xyxy": {
+        "x1": 396,
+        "y1": 72,
+        "x2": 765,
+        "y2": 668
+      },
+      "bbox_size": {
+        "width": 369,
+        "height": 596
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "system": {
+    "mode": "yolo",
+    "input_source": "local",
+    "save_strategy": "all"
+  },
+  "source": {
+    "camera": {
+      "exposure_time": 1200,
+      "discard_frames": 5,
+      "capture_count": 10
+    },
+    "local": {
+      "dir_path": "inputs",
+      "valid_extensions": [
+        ".png",
+        ".jpg",
+        ".bmp"
+      ],
+      "read_count": 1
+    }
+  },
+  "yolo":{
+    "model":"yolov8n.pt",
+    "min_confidence":0.5,
+    "expected_class_name":"cell phone",
+    "expected_count":1
+  },
+  "roi": {
+    "x": 285,
+    "y": 85,
+    "w": 615,
+    "h": 685
+  },
+  "template": {
+    "enable": true,
+    "dir_name":"templates",
+    "source_name":"template_source.png",
+    "file_name": "dpi_button_template.png",
+    "meta_name": "template_meta.json",
+    "match": {
+      "method": "TM_CCOEFF_NORMED",
+      "threshold": 0.85
+    },
+    "box": {
+      "x": 540,
+      "y": 480,
+      "w": 80,
+      "h": 90
+    }
+  },
+  "preprocess": {
+    "filter": {
+      "type": "gaussian",
+      "ksize": [
+        5,
+        5
+      ]
+    },
+    "binary": {
+      "enable": true,
+      "threshold": 0,
+      "max_value": 255,
+      "type": "OTSU_INV"
+    }
+  },
+  "contour_filter": {
+    "min_area": 1000,
+    "margin": 30,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "draw": {
+    "contour": {
+      "thickness": 1,
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    "template": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "thickness": 1
+    },
+    "roi": {
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "thickness": 1
+    }
+  },
+  "judge": {
+    "expected_count": 1,
+    "min_area": 10000,
+    "max_area": 50000,
+    "min_aspect_ratio": 0.5,
+    "max_aspect_ratio": 5.0
+  },
+  "outputs": {
+    "base_dir": "outputs",
+    "use_subfolder":true,
+    "subfolder_prefix":"sample",
+    "images": {
+      "save_original": true,
+      "save_roi": true,
+      "save_result": true
+    },
+    "data": {
+      "result_filename": "yolo_result.json",
+      "summary_filename": "summary.json"
+    }
+  }
+}
