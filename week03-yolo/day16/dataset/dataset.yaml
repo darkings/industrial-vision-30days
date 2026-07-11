@@ -1,5 +1,6 @@
-path:
-  
+path: D:\Projects\industrial-vision-30days\week03-yolo\day16\dataset
+train: images/train
+val: images/val
 
 names:
-  0 : mouse
+  0: dpi_button
