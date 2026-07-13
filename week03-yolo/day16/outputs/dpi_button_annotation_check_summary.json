@@ -1,0 +1,445 @@
+{
+  "dataset_root": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset",
+  "class_id": 0,
+  "class_name": "dpi_button",
+  "splits": {
+    "train": {
+      "images": 23,
+      "labels": 23,
+      "missing_labels": [],
+      "extra_labels": [],
+      "label_items": [
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0001.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0001.txt",
+          "class_id": 0,
+          "cx": 0.421398,
+          "cy": 0.596514,
+          "w": 0.046891,
+          "h": 0.068965,
+          "xyxy_pixel": [
+            509.38,
+            575.52,
+            569.4,
+            646.14
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0002.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0002.txt",
+          "class_id": 0,
+          "cx": 0.465074,
+          "cy": 0.57353,
+          "w": 0.058852,
+          "h": 0.06667,
+          "xyxy_pixel": [
+            557.63,
+            553.16,
+            632.96,
+            621.43
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0003.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0003.txt",
+          "class_id": 0,
+          "cx": 0.682086,
+          "cy": 0.467783,
+          "w": 0.058844,
+          "h": 0.06666,
+          "xyxy_pixel": [
+            835.41,
+            444.88,
+            910.73,
+            513.14
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0004.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0004.txt",
+          "class_id": 0,
+          "cx": 0.747371,
+          "cy": 0.372368,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            918.97,
+            346.01,
+            994.3,
+            416.6
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0006.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0006.txt",
+          "class_id": 0,
+          "cx": 0.792434,
+          "cy": 0.54708,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            976.65,
+            524.91,
+            1051.98,
+            595.51
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0007.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0007.txt",
+          "class_id": 0,
+          "cx": 0.800707,
+          "cy": 0.48501,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            987.24,
+            461.35,
+            1062.57,
+            531.95
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0008.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0008.txt",
+          "class_id": 0,
+          "cx": 0.774043,
+          "cy": 0.445928,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            953.11,
+            421.33,
+            1028.44,
+            491.93
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0009.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0009.txt",
+          "class_id": 0,
+          "cx": 0.439328,
+          "cy": 0.394204,
+          "w": 0.058844,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            524.68,
+            368.37,
+            600.0,
+            438.96
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0011.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0011.txt",
+          "class_id": 0,
+          "cx": 0.647145,
+          "cy": 0.41834,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            790.68,
+            393.08,
+            866.01,
+            463.68
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0012.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0012.txt",
+          "class_id": 0,
+          "cx": 0.718871,
+          "cy": 0.533286,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            882.49,
+            510.79,
+            957.82,
+            581.38
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0013.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0013.txt",
+          "class_id": 0,
+          "cx": 0.312434,
+          "cy": 0.465464,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            362.25,
+            441.34,
+            437.58,
+            511.93
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0014.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0014.txt",
+          "class_id": 0,
+          "cx": 0.294957,
+          "cy": 0.548228,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            339.88,
+            526.09,
+            415.21,
+            596.68
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0016.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0016.txt",
+          "class_id": 0,
+          "cx": 0.328984,
+          "cy": 0.565464,
+          "w": 0.058844,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            383.44,
+            543.74,
+            458.76,
+            614.33
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0017.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0017.txt",
+          "class_id": 0,
+          "cx": 0.312434,
+          "cy": 0.617192,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            362.25,
+            596.71,
+            437.58,
+            667.3
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0018.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0018.txt",
+          "class_id": 0,
+          "cx": 0.711512,
+          "cy": 0.405698,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            873.07,
+            380.14,
+            948.4,
+            450.73
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0019.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0019.txt",
+          "class_id": 0,
+          "cx": 0.643465,
+          "cy": 0.409146,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            785.97,
+            383.67,
+            861.3,
+            454.26
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0021.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0021.txt",
+          "class_id": 0,
+          "cx": 0.629676,
+          "cy": 0.529839,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            768.32,
+            507.26,
+            843.65,
+            577.85
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0022.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0022.txt",
+          "class_id": 0,
+          "cx": 0.662777,
+          "cy": 0.603403,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            810.69,
+            582.59,
+            886.02,
+            653.18
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0023.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0023.txt",
+          "class_id": 0,
+          "cx": 0.614957,
+          "cy": 0.504551,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            749.48,
+            481.36,
+            824.81,
+            551.96
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0024.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0024.txt",
+          "class_id": 0,
+          "cx": 0.632434,
+          "cy": 0.395356,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            771.85,
+            369.55,
+            847.18,
+            440.14
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0026.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0026.txt",
+          "class_id": 0,
+          "cx": 0.651746,
+          "cy": 0.288462,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            796.57,
+            260.09,
+            871.9,
+            330.68
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0027.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0027.txt",
+          "class_id": 0,
+          "cx": 0.76209,
+          "cy": 0.289609,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            937.81,
+            261.26,
+            1013.14,
+            331.86
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\train\\dpi_button_0028.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\train\\dpi_button_0028.txt",
+          "class_id": 0,
+          "cx": 0.331746,
+          "cy": 0.334438,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            386.97,
+            307.17,
+            462.3,
+            377.76
+          ]
+        }
+      ]
+    },
+    "val": {
+      "images": 5,
+      "labels": 5,
+      "missing_labels": [],
+      "extra_labels": [],
+      "label_items": [
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0005.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\val\\dpi_button_0005.txt",
+          "class_id": 0,
+          "cx": 0.804387,
+          "cy": 0.430986,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            991.95,
+            406.03,
+            1067.28,
+            476.63
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0010.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\val\\dpi_button_0010.txt",
+          "class_id": 0,
+          "cx": 0.543238,
+          "cy": 0.345928,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            657.68,
+            318.93,
+            733.01,
+            389.53
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0015.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\val\\dpi_button_0015.txt",
+          "class_id": 0,
+          "cx": 0.374961,
+          "cy": 0.529834,
+          "w": 0.058844,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            442.29,
+            507.25,
+            517.61,
+            577.85
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0020.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\val\\dpi_button_0020.txt",
+          "class_id": 0,
+          "cx": 0.690363,
+          "cy": 0.419492,
+          "w": 0.058852,
+          "h": 0.068945,
+          "xyxy_pixel": [
+            846.0,
+            394.26,
+            921.33,
+            464.86
+          ]
+        },
+        {
+          "image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0025.png",
+          "label": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\labels\\val\\dpi_button_0025.txt",
+          "class_id": 0,
+          "cx": 0.642543,
+          "cy": 0.341333,
+          "w": 0.058852,
+          "h": 0.068936,
+          "xyxy_pixel": [
+            784.79,
+            314.23,
+            860.12,
+            384.82
+          ]
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "error_count": 0
+}

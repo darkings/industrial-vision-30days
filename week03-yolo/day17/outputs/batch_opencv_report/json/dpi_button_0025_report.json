@@ -1,0 +1,8 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\dataset\\images\\val\\dpi_button_0025.png",
+  "model_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo\\day16\\runs\\dpi_button_smoke_test-2\\weights\\best.pt",
+  "box_count": 0,
+  "status": "NG",
+  "reason": "no_detection",
+  "detections": []
+}
