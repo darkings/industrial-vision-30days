@@ -1,0 +1,14 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\inputs\\image_02.png",
+  "ocr_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_02_result.json",
+  "rule_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_02_rule_result.json",
+  "status": "OK",
+  "review_type": "pass",
+  "observations": [
+    "保留当前 ROI、成像和规则配置"
+  ],
+  "possible_causes": [],
+  "next_actions": [
+    "保留当前 ROI、成像和规则配置"
+  ]
+}

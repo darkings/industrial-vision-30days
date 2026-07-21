@@ -1,0 +1,16 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\inputs\\image_01.png",
+  "ocr_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_01_result.json",
+  "rule_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_01_rule_result.json",
+  "status": "NG",
+  "review_type": "ocr_ok_rule_ng",
+  "observations": [
+    "OCR 识别稳定，但当前图片不符合 expected_texts"
+  ],
+  "possible_causes": [
+    "OCR 识别稳定，但当前图片不符合 expected_texts"
+  ],
+  "next_actions": [
+    "确认 expected_texts 是否对应当前图片或产品配方"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\inputs\\image_01.png",
+  "roi_bbox": {
+    "x": 630,
+    "y": 70,
+    "width": 850,
+    "height": 750
+  },
+  "ocr_params": {
+    "lang": "ch",
+    "use_textline_orientation": true,
+    "enable_mkldnn": false
+  },
+  "text_count": 4,
+  "detections": [
+    {
+      "index": 1,
+      "text": "锄禾日当午",
+      "confidence": 0.9992029070854187,
+      "bbox_polygon": [
+        [
+          12,
+          66
+        ],
+        [
+          702,
+          89
+        ],
+        [
+          697,
+          227
+        ],
+        [
+          8,
+          205
+        ]
+      ]
+    },
+    {
+      "index": 2,
+      "text": "汗滴禾下土",
+      "confidence": 0.9992324709892273,
+      "bbox_polygon": [
+        [
+          0,
+          236
+        ],
+        [
+          695,
+          252
+        ],
+        [
+          692,
+          385
+        ],
+        [
+          0,
+          369
+        ]
+      ]
+    },
+    {
+      "index": 3,
+      "text": "谁知盘中餐",
+      "confidence": 0.9996854662895203,
+      "bbox_polygon": [
+        [
+          0,
+          387
+        ],
+        [
+          687,
+          411
+        ],
+        [
+          683,
+          537
+        ],
+        [
+          0,
+          513
+        ]
+      ]
+    },
+    {
+      "index": 4,
+      "text": "粒粒皆辛苦",
+      "confidence": 0.9999135136604309,
+      "bbox_polygon": [
+        [
+          0,
+          539
+        ],
+        [
+          672,
+          554
+        ],
+        [
+          669,
+          667
+        ],
+        [
+          0,
+          653
+        ]
+      ]
+    }
+  ]
+}

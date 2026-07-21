@@ -1,0 +1,26 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\inputs\\image_01.png",
+  "ocr_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_01_result.json",
+  "expected_texts": [
+    "春眠不觉晓",
+    "处处闻啼鸟",
+    "夜来风雨声",
+    "花落知多少"
+  ],
+  "recognized_texts": [
+    "锄禾日当午",
+    "汗滴禾下土",
+    "谁知盘中餐",
+    "粒粒皆辛苦"
+  ],
+  "min_confidence": 0.9,
+  "status": false,
+  "reasons": [
+    "文本与期待文本不一致：第1行,应为春眠不觉晓,实为锄禾日当午,第2行,应为处处闻啼鸟,实为汗滴禾下土,第3行,应为夜来风雨声,实为谁知盘中餐,第4行,应为花落知多少,实为粒粒皆辛苦"
+  ],
+  "checks": {
+    "line_count_ok": true,
+    "text_match_ok": false,
+    "confidence_ok": true
+  }
+}

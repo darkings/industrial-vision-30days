@@ -1,0 +1,28 @@
+{
+  "normal_image": "C:\\Users\\Jie\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day20\\inputs\\normal.png",
+  "defect_image": "C:\\Users\\Jie\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day20\\inputs\\defect.png",
+  "diff_threshold": 30,
+  "min_area": 300,
+  "diff_count": 3,
+  "result": "NG",
+  "defects": [
+    {
+      "x": 289,
+      "y": 301,
+      "w": 70,
+      "h": 31
+    },
+    {
+      "x": 232,
+      "y": 280,
+      "w": 65,
+      "h": 27
+    },
+    {
+      "x": 183,
+      "y": 262,
+      "w": 60,
+      "h": 23
+    }
+  ]
+}

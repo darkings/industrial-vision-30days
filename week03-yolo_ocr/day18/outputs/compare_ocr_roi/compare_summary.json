@@ -1,0 +1,307 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day18\\inputs\\image.png",
+  "cases": [
+    {
+      "name": "tight_roi",
+      "roi_bbox": {
+        "x": 15,
+        "y": 20,
+        "width": 270,
+        "height": 180
+      },
+      "roi_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day18\\outputs\\compare_ocr_roi\\tight_roi.png",
+      "text_count": 6,
+      "texts": [
+        {
+          "index": 1,
+          "text": "旧目录 week03-yolo：不存在",
+          "confidence": 0.9462954998016357,
+          "bbox_polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              269,
+              0
+            ],
+            [
+              269,
+              19
+            ],
+            [
+              0,
+              19
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "text": "新目录 week03-yolo_ocr:存",
+          "confidence": 0.9782600402832031,
+          "bbox_polygon": [
+            [
+              0,
+              26
+            ],
+            [
+              270,
+              28
+            ],
+            [
+              270,
+              54
+            ],
+            [
+              0,
+              51
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "text": "Day17 输出结构检查：OK",
+          "confidence": 0.9664027690887451,
+          "bbox_polygon": [
+            [
+              0,
+              59
+            ],
+            [
+              225,
+              61
+            ],
+            [
+              224,
+              84
+            ],
+            [
+              0,
+              82
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "text": "张report.png: OK",
+          "confidence": 0.9572591781616211,
+          "bbox_polygon": [
+            [
+              0,
+              91
+            ],
+            [
+              202,
+              93
+            ],
+            [
+              201,
+              118
+            ],
+            [
+              0,
+              116
+            ]
+          ]
+        },
+        {
+          "index": 5,
+          "text": "个report.json: OK",
+          "confidence": 0.9718480706214905,
+          "bbox_polygon": [
+            [
+              0,
+              122
+            ],
+            [
+              209,
+              125
+            ],
+            [
+              209,
+              150
+            ],
+            [
+              0,
+              147
+            ]
+          ]
+        },
+        {
+          "index": 6,
+          "text": "summary / failed_cases: OK",
+          "confidence": 0.9828023314476013,
+          "bbox_polygon": [
+            [
+              0,
+              155
+            ],
+            [
+              269,
+              157
+            ],
+            [
+              269,
+              179
+            ],
+            [
+              0,
+              177
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "loose_roi",
+      "roi_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 207
+      },
+      "roi_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day18\\outputs\\compare_ocr_roi\\loose_roi.png",
+      "text_count": 6,
+      "texts": [
+        {
+          "index": 1,
+          "text": "旧目录 week03-yolo: 不存在",
+          "confidence": 0.9360164403915405,
+          "bbox_polygon": [
+            [
+              0,
+              14
+            ],
+            [
+              278,
+              15
+            ],
+            [
+              278,
+              41
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        {
+          "index": 2,
+          "text": "新目录 week03-yolo_ocr: 存在",
+          "confidence": 0.9554617404937744,
+          "bbox_polygon": [
+            [
+              0,
+              47
+            ],
+            [
+              299,
+              49
+            ],
+            [
+              299,
+              74
+            ],
+            [
+              0,
+              73
+            ]
+          ]
+        },
+        {
+          "index": 3,
+          "text": "Day17 输出结构检查：OK",
+          "confidence": 0.9818581342697144,
+          "bbox_polygon": [
+            [
+              0,
+              80
+            ],
+            [
+              235,
+              82
+            ],
+            [
+              235,
+              105
+            ],
+            [
+              0,
+              102
+            ]
+          ]
+        },
+        {
+          "index": 4,
+          "text": "张report.png:OK",
+          "confidence": 0.9956072568893433,
+          "bbox_polygon": [
+            [
+              0,
+              112
+            ],
+            [
+              212,
+              114
+            ],
+            [
+              212,
+              139
+            ],
+            [
+              0,
+              137
+            ]
+          ]
+        },
+        {
+          "index": 5,
+          "text": "5个 report.json: OK",
+          "confidence": 0.9550344944000244,
+          "bbox_polygon": [
+            [
+              0,
+              142
+            ],
+            [
+              223,
+              146
+            ],
+            [
+              223,
+              172
+            ],
+            [
+              0,
+              168
+            ]
+          ]
+        },
+        {
+          "index": 6,
+          "text": "summary / failed_cases: OK",
+          "confidence": 0.9956295490264893,
+          "bbox_polygon": [
+            [
+              0,
+              177
+            ],
+            [
+              294,
+              180
+            ],
+            [
+              294,
+              205
+            ],
+            [
+              0,
+              202
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

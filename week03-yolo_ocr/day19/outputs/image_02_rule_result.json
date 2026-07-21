@@ -1,0 +1,24 @@
+{
+  "input_image": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\inputs\\image_02.png",
+  "ocr_result_path": "D:\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day19\\outputs\\image_02_result.json",
+  "expected_texts": [
+    "春眠不觉晓",
+    "处处闻啼鸟",
+    "夜来风雨声",
+    "花落知多少"
+  ],
+  "recognized_texts": [
+    "春眠不觉晓",
+    "处处闻啼鸟",
+    "夜来风雨声",
+    "花落知多少"
+  ],
+  "min_confidence": 0.9,
+  "status": true,
+  "reasons": [],
+  "checks": {
+    "line_count_ok": true,
+    "text_match_ok": true,
+    "confidence_ok": true
+  }
+}

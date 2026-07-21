@@ -1,0 +1,111 @@
+system:
+  mode: detect
+  input_source: local
+  save_strategy: all
+source:
+  camera:
+    exposure_time: 1200
+    discard_frames: 5
+    capture_count: 10
+  local:
+    dir_path: inputs
+    valid_extensions:
+      - .png
+      - .jpg
+      - .bmp
+    read_count: 2
+roi:
+  x: 630
+  y: 70
+  w: 850
+  h: 750
+ocr:
+  use_textline_orientation: true
+  enable_mkldnn: false
+  lang: ch
+  validation:
+    min_confidence: 0.90
+    line_count: 4
+    expected_texts:
+      - 春眠不觉晓
+      - 处处闻啼鸟
+      - 夜来风雨声
+      - 花落知多少
+template:
+  enable: true
+  dir_name: templates
+  source_name: template_source.png
+  file_name: dpi_button_template.png
+  meta_name: template_meta.json
+  match:
+    method: TM_CCOEFF_NORMED
+    threshold: 0.85
+  box:
+    x: 540
+    y: 480
+    w: 80
+    h: 90
+preprocess:
+  filter:
+    enable: false
+    type: gaussian
+    ksize:
+      - 5
+      - 5
+  binary:
+    enable: true
+    thresh_val: 0
+    max_val: 255
+    inverse: false
+    use_otsu: true
+contour_filter:
+  min_area: 1000
+  margin: 30
+  min_aspect_ratio: 0.5
+  max_aspect_ratio: 5.0
+draw:
+  contour:
+    thickness: 1
+    color:
+      - 0
+      - 255
+      - 0
+  template:
+    color:
+      - 255
+      - 0
+      - 0
+    thickness: 1
+  roi:
+    color:
+      - 0
+      - 255
+      - 255
+    thickness: 1
+  ocr:
+    color:
+      - 0
+      - 255
+      - 0
+    thickness: 1
+judge:
+  expected_count: 1
+  min_area: 10000
+  max_area: 50000
+  min_aspect_ratio: 0.5
+  max_aspect_ratio: 5.0
+outputs:
+  base_dir: outputs
+  use_subfolder: false
+  subfolder_prefix: sample
+  images:
+    save_original: false
+    save_roi: true
+    save_result: false
+  data:
+    save_result: true
+    save_summary: false
+    save_rule_result: false
+    result_filename: result.json
+    rule_result_filename: rule_result.json
+    summary_filename: summary.json
