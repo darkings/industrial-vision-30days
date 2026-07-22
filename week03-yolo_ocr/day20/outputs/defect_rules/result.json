@@ -1,0 +1,27 @@
+{
+  "input_image": "C:\\Users\\Jie\\Projects\\industrial-vision-30days\\week03-yolo_ocr\\day20\\inputs\\scratches.png",
+  "parameters": {
+    "min_area": 400,
+    "max_area": 100000,
+    "max_defect_count": 2,
+    "binary_threshold": 130
+  },
+  "defect_count": 1,
+  "defects": [
+    {
+      "id": 1,
+      "bbox": {
+        "x": 275,
+        "y": 785,
+        "width": 225,
+        "height": 29
+      },
+      "area_px": 3271.5,
+      "region": "critical"
+    }
+  ],
+  "result": "NG",
+  "reasons": [
+    "defects are located in the critical region"
+  ]
+}
