@@ -57,7 +57,7 @@ Day15-Day17 已完成 YOLO 推理结果结构、YOLO 数据集准备、训练烟
 3. 相机参数、图像输出、检测结果都要可追溯。
 4. 每次新增功能优先写可验证的小测试或最小验证脚本。
 5. 学员跟写练习中的错误，先在聊天中指出，由学员亲自修改。
-6. LEARNING_PROGRESS.md 和 LEARNING_ERRORS.md 已删除；README.md 不再逐课更新；30_DAY_LEARNING_PLAN.md 只在路线或天级安排变化时更新；错误统一记录到 Obsidian 的 _LearningErrors.md。
+6. LEARNING_PROGRESS.md 和 LEARNING_ERRORS.md 已删除；README.md 不再逐课更新；LEARNING_PLAN.md 只在路线或天级安排变化时更新；错误统一记录到 Obsidian 的 _LearningErrors.md。
 7. 项目级文档更新规则见 AGENTS.md。
 8. 讲解新内容前先对照本计划；如果实际讲解内容已经改变某天安排，需要先更新本计划的天级路线，再继续学习。
 ```
@@ -1054,7 +1054,7 @@ Day12 的边界：
 
 ```text
 1. 打开 AGENTS.md，确认当前文档更新规则和协作方式。
-2. 打开 30_DAY_LEARNING_PLAN.md，确认当前学习路线。
+2. 打开 LEARNING_PLAN.md，确认当前学习路线。
 3. 打开当天 Obsidian 笔记，继续当天概念、代码和实验记录。
 4. 必要时查看对应日期目录中的练习代码和 outputs。
 ```
@@ -1084,7 +1084,7 @@ Day12 的边界：
 2. 记录关键参数：曝光、增益、阈值、面积阈值、光源条件。
 3. 记录今天最容易错的 1-3 个点。
 4. 将实验结果、路径、关键参数和结论补进当天 Obsidian 笔记。
-5. README.md 和 30_DAY_LEARNING_PLAN.md 不再逐课更新；错误统一写入 Obsidian 的 _LearningErrors.md；路线、环境或项目规则变化时按 AGENTS.md 更新项目级文档。
+5. README.md 和 LEARNING_PLAN.md 不再逐课更新；错误统一写入 Obsidian 的 _LearningErrors.md；路线、环境或项目规则变化时按 AGENTS.md 更新项目级文档。
 ```
 
 ### 4. 当前阶段的学习重点
