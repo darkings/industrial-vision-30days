@@ -201,25 +201,31 @@ YAML 后直接接文章 # H1 标题，不留空行。
 
 ## 代码协作规则
 
-当前阶段代码放在：
+Day22-Day29 多模式工业视觉检测系统的正式代码统一放在：
 
 ```text
-week02-camera/dayXX/
+week04-industrial-project/
 ```
 
-输出放在：
+不要为 Day22-Day29 每天复制一套完整项目。正式模块持续在项目根目录迭代；当天临时验证脚本可以放在：
 
 ```text
-week02-camera/dayXX/outputs/<实验名>/
+week04-industrial-project/experiments/dayXX/
 ```
 
-命名建议：
+正式运行输出按职责和运行批次放在：
 
 ```text
-test01_*.py
-test02_*.py
-test03_*.py
+week04-industrial-project/outputs/<run_id>/
+week04-industrial-project/reports/<run_id>/
+week04-industrial-project/logs/
 ```
+
+Day29-Day30 继续使用同一个 `week04-industrial-project/` 完成验收和复盘，不新建 week05 项目副本。
+
+以前各天的学习代码保留在原目录。迁移传统视觉、YOLO、OCR 功能时，不直接覆盖 Day15-Day20 的原始练习文件，而是把确认需要复用的逻辑整理进新项目模块。
+
+命名规则：正式模块使用职责名称，例如 `camera_service.py`、`traditional.py`、`yolo.py`、`ocr.py`；只有 `experiments/dayXX/` 中的临时练习继续使用 `test01_*.py`、`test02_*.py`。
 
 Day12 起优先保持：
 
