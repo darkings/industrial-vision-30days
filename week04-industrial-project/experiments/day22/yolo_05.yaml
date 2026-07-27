@@ -1,0 +1,7 @@
+mode: yolo
+config_version: 1.0.0
+model:
+  path: models/yolo/keycap_v1.pt
+    confidence: 0.85  # 错误：缩进不一致，上一行没有冒号或键名
+ rules:  # 错误：顶层非法空格缩进
+  expected_class: keycap: [bad_mapping

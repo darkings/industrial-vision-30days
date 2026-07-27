@@ -1,0 +1,30 @@
+app:
+  name: Multi-Mode Keycap Vision Inspection System
+  version: 1.0.0
+active_mode: traditional
+mode_configs:
+  traditional: configs/modes/traditional.yaml
+  yolo: configs/modes/yolo.yaml
+  ocr: configs/modes/ocr.yaml
+  combined: configs/modes/combined.yaml
+input:
+  source: camera
+  image_path: null
+  directory_path: null
+camera:
+  serial_number: SN123456789
+  exposure_us: 5000
+  discard_frames: 2
+  retry_count: 3
+output:
+  outputs_dir: outputs/
+  reports_dir: reports/
+  save_original: true
+  save_annotated: true
+  save_debug_images: false
+logging:
+  level: INFO
+  directory: logs/
+  console: true
+  max_bytes: 10485760
+  backup_count: 5

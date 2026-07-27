@@ -1,0 +1,36 @@
+{
+    "schema_version": "1.0.0",
+    "run_id": "run_20260727_001",
+    "image_id": "img_001",
+    "batch_id": "batch_01",
+    "timestamp": "2026-07-27T16:58:37.124255+08:00",
+    "mode": "yolo",
+    "execution_status": "ERROR",
+    "inspection_result": "UNKNOWN",
+    "reason_codes": [
+        "SYSTEM_ERROR"
+    ],
+    "message": "System error occurred during inference.",
+    "measurements": {},
+    "versions": {
+        "app_version": "1.0.0",
+        "config_version": "1.0.0",
+        "model_version": "v1"
+    },
+    "paths": {
+        "input_path": "data\\input.png",
+        "annotated_path": null,
+        "json_path": null
+    },
+    "timing": {
+        "preprocess_ms": 12.5,
+        "inference_ms": 45.0,
+        "total_ms": 57.5
+    },
+    "error": {
+        "error_type": "TimeoutError",
+        "stage": "inference",
+        "message": "GPU inference timeout after 5000ms",
+        "recoverable": true
+    }
+}

@@ -1,0 +1,15 @@
+mode: ocr
+config_version: 1.0.0
+model:
+  lang: en
+  use_textline_orientation: true
+  enable_mkldnn: true
+preprocess:
+  grayscale: true
+  threshold_method: otsu
+  fixed_threshold: null
+  scale: 1.5
+rules:
+  min_confidence: 0.90
+  expected_legend: A
+  allow_empty_result: false

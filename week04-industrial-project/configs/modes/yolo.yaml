@@ -1,0 +1,13 @@
+mode: yolo
+config_version: 1.0.0
+model:
+  path: models/yolo/keycap_v1.pt
+  version: v8n
+  confidence: 0.85
+  iou: 0.45
+  image_size: 640
+  device: cuda:0
+rules:
+  expected_class: keycap
+  expected_count: 1
+  reject_duplicate_boxes: true

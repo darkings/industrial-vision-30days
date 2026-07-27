@@ -1,0 +1,12 @@
+mode: combined
+config_version: 1.0.0
+batch_file: data/batches/BATCH_01.yaml
+components:
+  traditional: true
+  yolo: true
+  ocr: true
+rules:
+  require_exact_count: true
+  reject_missing_legends: true
+  reject_duplicate_legends: true
+  reject_unexpected_legends: true
