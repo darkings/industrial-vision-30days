@@ -1,5 +1,6 @@
 from core.catalog import KeycapCatalog
 from core.config_models import RuntimeConfig
+from core.exceptions import FeatureNotImplementedError
 
 from camera.image_source import ImageSource
 from camera.local_source import LocalImageSource
@@ -15,6 +16,6 @@ def create_image_source(config: RuntimeConfig, catalog: KeycapCatalog) -> ImageS
         )
 
     if config.main_config.input.source == "directory":
-        raise NotImplementedError("directory功能尚未实现")
+        raise FeatureNotImplementedError("directory功能尚未实现")
     if config.main_config.input.source == "camera":
-        raise NotImplementedError("camera功能尚未实现")
+        raise FeatureNotImplementedError("camera功能尚未实现")

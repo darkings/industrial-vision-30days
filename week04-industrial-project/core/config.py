@@ -4,6 +4,7 @@ from typing import Any
 import yaml
 from pydantic import ValidationError
 
+from core.exceptions import ConfigError
 from core.paths import PROJECT_ROOT_PATH, resolve_project_path
 
 from .config_models import (
@@ -25,10 +26,10 @@ def load_yaml(config_path: Path) -> dict[str, Any]:
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
-    except yaml.YAMLError as e:
-        raise ValueError(f"读取YAML配置失败，YAML语法错误：{config_path}") from e
-    except OSError as e:
-        raise ValueError(f"读取YAML配置失败，文件无法打开：{config_path}") from e
+    except yaml.YAMLError as exc:
+        raise ValueError(f"读取YAML配置失败，YAML语法错误：{config_path}") from exc
+    except OSError as exc:
+        raise ValueError(f"读取YAML配置失败，文件无法打开：{config_path}") from exc
 
     if data is None:
         raise ValueError(f"读取YAML配置失败，YAML文件内容为空：{config_path}")
@@ -47,8 +48,8 @@ def load_main_config() -> MainConfig:
         raw_dict = load_yaml(config_path=main_config_path)
         config = MainConfig.model_validate(raw_dict)
         return config
-    except ValidationError as e:
-        raise ValueError("配置文件格式格式或数值不符合业务规则要求") from e
+    except (ValueError, ValidationError) as exc:
+        raise ConfigError(f"配置文件格式格式或数值不符合业务规则要求：{exc}") from exc
 
 
 def load_mode_config(main_config: MainConfig) -> StrictConfigModel:
@@ -63,17 +64,18 @@ def load_mode_config(main_config: MainConfig) -> StrictConfigModel:
         acitve_config = MODE_CONFIG_MODELS[active_mode]
         config = acitve_config.model_validate(raw_dict)
         return config
-    except ValidationError as e:
-        raise ValueError("配置文件格式格式或数值不符合业务规则要求") from e
+    except (ValueError, ValidationError) as exc:
+        raise ConfigError(f"配置文件格式格式或数值不符合业务规则要求：{exc}") from exc
 
 
 def load_config() -> RuntimeConfig:
     """加载运行配置"""
-    main_config = load_main_config()
-    mode_config = load_mode_config(main_config)
-    runtime_config = {"main_config": main_config, "mode_config": mode_config}
+
     try:
+        main_config = load_main_config()
+        mode_config = load_mode_config(main_config)
+        runtime_config = {"main_config": main_config, "mode_config": mode_config}
         config = RuntimeConfig.model_validate(runtime_config)
         return config
-    except ValidationError as e:
-        raise ValueError("配置文件格式格式或数值不符合业务规则要求") from e
+    except (ValueError, TypeError, FileNotFoundError) as exc:
+        raise ConfigError(f"配置文件格式格式或数值不符合业务规则要求：{exc}") from exc

@@ -2,8 +2,16 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from core.catalog import KeycapProduct
-from core.exceptions import ImageReadError
+from core.exceptions import (
+    ImageDecodeError,
+    ImageNotFoundError,
+    InputNotFileError,
+    InputSourceError,
+    SourceNotOpenedError,
+    UnsupportedImageFormatError,
+)
 from core.paths import resolve_project_path
+from pydantic import ValidationError
 
 from camera.image_source import ImageInput, ImageSource
 
@@ -27,15 +35,15 @@ class LocalImageSource(ImageSource):
     def open(self):
         image_path = resolve_project_path(self.image_path)
         if not image_path.exists():
-            raise ImageReadError(
+            raise ImageNotFoundError(
                 image_path, message=f"无法读取图片: 当前路径不存在 {image_path}"
             )
         if not image_path.is_file():
-            raise ImageReadError(
+            raise InputNotFileError(
                 image_path, message=f"无法读取图片: 当前路径不是一个文件 {image_path}"
             )
         if image_path.suffix.lower() not in self.allowed_extensions:
-            raise ImageReadError(
+            raise UnsupportedImageFormatError(
                 image_path, message=f"无法读取图片: 图片格式不支持 {image_path.suffix}"
             )
         self.image_path = image_path
@@ -45,7 +53,7 @@ class LocalImageSource(ImageSource):
 
     def read(self):
         if not self._opened:
-            raise ImageReadError(self.image_path, message="请先调用open")
+            raise SourceNotOpenedError()
         if not self._has_read:
             import cv2
 
@@ -54,7 +62,7 @@ class LocalImageSource(ImageSource):
             cn_tz = timezone(timedelta(hours=8))
             captured_at = datetime.fromtimestamp(mtime, tz=cn_tz)
             if image is None:
-                raise ImageReadError(self.image_path)
+                raise ImageDecodeError(self.image_path)
             metadata = {
                 "timestamp_source": "file_mtime",
                 "file_mtime": mtime,
@@ -65,16 +73,19 @@ class LocalImageSource(ImageSource):
                 "size_u": self.product.size_u,
             }
             self._has_read = True
-            return ImageInput(
-                image=image,
-                image_id=self.image_path.stem,
-                product_id=self.product.product_id,
-                batch_id=self.batch_id,
-                captured_at=captured_at,
-                source_type="image",
-                source_path=self.image_path,
-                metadata=metadata,
-            )
+            try:
+                return ImageInput(
+                    image=image,
+                    image_id=self.image_path.stem,
+                    product_id=self.product.product_id,
+                    batch_id=self.batch_id,
+                    captured_at=captured_at,
+                    source_type="image",
+                    source_path=self.image_path,
+                    metadata=metadata,
+                )
+            except (ValueError, ValidationError) as exc:
+                raise InputSourceError(f"创建ImageInput失败：{exc}")
 
         else:
             return None

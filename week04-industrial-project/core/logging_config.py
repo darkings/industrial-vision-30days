@@ -62,9 +62,9 @@ def setup_logging(config: RuntimeConfig, context: RunContext) -> logging.LoggerA
             file_handler.setFormatter(formatter)
             file_handler.addFilter(run_id_filter)
             handlers.append(file_handler)
-        except (OSError, ValueError) as e:
+        except (OSError, ValueError) as exc:
             file_handler_failed = True
-            file_failure_error = str(e)
+            file_failure_error = str(exc)
 
     # 文件创建失败或日志配置由控制台为True时强制建立控制台Handler
     if logging_config.console or file_handler_failed or not handlers:

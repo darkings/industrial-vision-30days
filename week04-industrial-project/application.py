@@ -5,6 +5,7 @@ from camera.factory import create_image_source
 from core.catalog import load_keycap_catalog
 from core.config_models import RuntimeConfig
 from core.context import RunContext
+from core.exceptions import NoImageAvailableError
 from core.exit_codes import ExitCode
 
 
@@ -28,8 +29,7 @@ class InspectionApplication:
         with source:
             image_input = source.read()
             if image_input is None:
-                self.logger.warning("输入源没有返回图像")
-                return ExitCode.ERROR
+                raise NoImageAvailableError(source=source.__class__.__name__)
             self.logger.info(f"image_shape:{image_input.image.shape}")
             self.logger.info(f"image_id:{image_input.image_id}")
             self.logger.info(f"product_id:{image_input.product_id}")

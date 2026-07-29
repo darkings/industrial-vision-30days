@@ -26,8 +26,8 @@ def test_02(data):
     valid_data["camera"]["exposuer_us"] = valid_data["camera"].pop("exposure_us")
     try:
         MainConfig.model_validate(valid_data)
-    except ValidationError as e:
-        print(f"错误：{e}")
+    except ValidationError as exc:
+        print(f"错误：{exc}")
     else:
         raise AssertionError("预期ValidationError，但验证成功")
 
@@ -38,8 +38,8 @@ def test_03(data):
     valid_data["active_mode"] = "traditonal"
     try:
         MainConfig.model_validate(valid_data)
-    except ValidationError as e:
-        print(f"错误：{e}")
+    except ValidationError as exc:
+        print(f"错误：{exc}")
     else:
         raise AssertionError("预期ValidationError，但验证成功")
 
@@ -51,8 +51,8 @@ def test_04(data):
     valid_data["input"]["image_path"] = None
     try:
         MainConfig.model_validate(valid_data)
-    except ValidationError as e:
-        print(f"错误：{e}")
+    except ValidationError as exc:
+        print(f"错误：{exc}")
     else:
         raise AssertionError("预期ValidationError，但验证成功")
 

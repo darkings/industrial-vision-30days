@@ -3,7 +3,7 @@ from pathlib import Path
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from core.config import load_yaml
-from core.exceptions import ProductNotFoundError
+from core.exceptions import CatalogError, ProductNotFoundError
 from core.paths import resolve_project_path
 
 
@@ -63,7 +63,9 @@ class KeycapCatalog(BaseModel):
 
 def load_keycap_catalog(catalog_path: str | Path) -> KeycapCatalog:
     """加载键盘套装"""
-
-    catalog_path = resolve_project_path(catalog_path)
-    catalog_config = load_yaml(catalog_path)
-    return KeycapCatalog.model_validate(catalog_config)
+    try:
+        catalog_path = resolve_project_path(catalog_path)
+        catalog_config = load_yaml(catalog_path)
+        return KeycapCatalog.model_validate(catalog_config)
+    except (ValueError, OSError, TypeError) as exc:
+        raise CatalogError(f"创建KeycapCatalog失败：{exc}") from exc
