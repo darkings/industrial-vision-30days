@@ -39,15 +39,39 @@ class InputConfig(StrictConfigModel):
     directory_path: Path | None = Field(
         default=None, description="图片目录的路径（当 source 为 'directory' 时生效）"
     )
+    catalog_path: Path = Field(description="键帽分类方案路径")
+    product_id: str | None = Field(default=None, description="键帽标识")
+    batch_id: str = Field(description="产品批次")
+    allowed_extensions: list[str] = Field(..., description="支持的图片格式")
 
     @model_validator(mode="after")
     def validate_paths_based_on_source(self) -> "InputConfig":
         """根据source的值来校验对应的路径是否提供"""
-        if self.source == "image" and self.image_path is None:
-            raise ValueError("当source为image时，必须提供有效的image_path")
-        if self.source == "directory" and self.directory_path is None:
-            raise ValueError("当source为directory时，必须提供有效的directory_path")
+
+        if self.source == "image" and not all(
+            [self.image_path, self.product_id, self.batch_id]
+        ):
+            raise ValueError(
+                "当来源为单张图片时，必须提供有效的图片路径、产品标识、产品批次"
+            )
+        if self.source == "camera" and not all([self.product_id, self.batch_id]):
+            raise ValueError("当来源为相机采集时，必须提供有效的产品标识、产品批次")
+        if self.source == "directory" and not all([self.directory_path, self.batch_id]):
+            raise ValueError("当来源为文件目录时，必须提供有效的文件目录路径、产品批次")
+        if not self.catalog_path:
+            raise ValueError("分类文件路径不能为空")
+        if not self.allowed_extensions:
+            raise ValueError("支持的图片格式不能为空")
+        if not all(s.startswith(".") for s in self.allowed_extensions):
+            raise ValueError("支持的图片格式必须以.开头")
+        if len(self.allowed_extensions) != len(set(self.allowed_extensions)):
+            raise ValueError("支持的图片格式不能有重复")
         return self
+
+    @field_validator("allowed_extensions")
+    @classmethod
+    def low_allowed_extensions(cls, v):
+        return [i.lower() for i in v]
 
 
 class CameraConfig(StrictConfigModel):

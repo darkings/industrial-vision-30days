@@ -19,8 +19,8 @@ class RunContext:
 
 def create_run_context(config: RuntimeConfig) -> RunContext:
     """创建运行上下文"""
-    beijing_tz = timezone(timedelta(hours=8))
-    datetime_now = datetime.now(beijing_tz)
+    cn_tz = timezone(timedelta(hours=8))
+    datetime_now = datetime.now(cn_tz)
     started_at = datetime_now.astimezone()
     current_datetime_ms = datetime_now.strftime("%Y%m%d_%H%M%S_%f")[:-3]
     current_mode = config.mode_config.mode

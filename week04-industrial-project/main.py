@@ -1,5 +1,7 @@
+from application import InspectionApplication
 from core.config import load_config
 from core.context import create_run_context
+from core.exit_codes import ExitCode
 from core.logging_config import setup_bootstrap_logging, setup_logging
 
 
@@ -11,13 +13,13 @@ def main() -> int:
         config = load_config()
     except Exception:
         logger.exception("读取配置文件失败")
-        return 1
+        return ExitCode.ERROR
     try:
         context = create_run_context(config)
         logger = setup_logging(config, context)
     except Exception:
         logger.exception("获取程序上下文失败")
-        return 1
+        return ExitCode.ERROR
     logger.info("配置加载成功，系统日志初始化完毕")
     logger.info(f"app_version：{config.main_config.app.version}")
     logger.info(f"active_mode：{config.main_config.active_mode}")
@@ -25,7 +27,12 @@ def main() -> int:
     logger.info(f"run_id：{context.run_id}")
     logger.info(f"output_dir：{context.output_dir}")
     logger.info(f"report_dir：{context.report_dir}")
-    return 0
+    try:
+        application = InspectionApplication(config, context, logger)
+        return application.run()
+    except Exception:
+        logger.exception("程序运行出错")
+        return ExitCode.ERROR
 
 
 if __name__ == "__main__":

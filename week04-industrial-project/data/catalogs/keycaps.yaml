@@ -1,0 +1,5 @@
+set_id: SET_001
+products:
+  - product_id: KC_001
+    legend: F8
+    size_u: 1.0
