@@ -81,6 +81,7 @@ class CameraConfig(StrictConfigModel):
     exposure_us: int = Field(gt=0, description="相机曝光时间（单位：微秒）")
     discard_frames: int = Field(ge=0, description="初始化时丢弃的预热帧数量")
     retry_count: int = Field(ge=0, description="相机连接或抓图失败时的重试次数")
+    mvs_install_dir: Path | None = Field(default=None, description="相机SDK安装目录")
 
 
 class OutputConfig(StrictConfigModel):

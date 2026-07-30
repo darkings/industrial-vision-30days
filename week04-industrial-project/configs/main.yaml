@@ -22,10 +22,11 @@ input:
     - .tif
     - .tiff
 camera:
-  serial_number: SN123456789
-  exposure_us: 5000
-  discard_frames: 2
+  serial_number: 7A050E5PAK00046
+  exposure_us: 1200
+  discard_frames: 5
   retry_count: 3
+  mvs_install_dir: null
 output:
   outputs_dir: outputs/
   reports_dir: reports/
