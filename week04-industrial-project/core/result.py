@@ -5,6 +5,8 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+INSPECTION_SCHEMA_VERSION = "1.0.0"
+
 
 class ExecutionStatus(str, Enum):
     """是否完成检测流程枚举"""
@@ -47,7 +49,9 @@ class VersionInfo(StricResultModel):
 
     app_version: str = Field(description="应用程序的版本号")
     config_version: str = Field(description="配置文件版本号")
-    model_version: str | None = Field(default=None, description="运行模式文件的版本号")
+    model_version: str | None = Field(
+        default=None, description="推理模型或算法资产版本号；无独立模型时为 None"
+    )
 
 
 class ResultPaths(StricResultModel):

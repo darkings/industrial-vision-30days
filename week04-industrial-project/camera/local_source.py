@@ -1,8 +1,8 @@
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from core.catalog import KeycapProduct
-from core.exceptions import (
+from core import KeycapProduct
+from core import (
     ImageDecodeError,
     ImageNotFoundError,
     InputNotFileError,
@@ -10,10 +10,10 @@ from core.exceptions import (
     SourceNotOpenedError,
     UnsupportedImageFormatError,
 )
-from core.paths import resolve_project_path
+from core import resolve_project_path
 from pydantic import ValidationError
 
-from camera.image_source import ImageInput, ImageSource
+from .image_source import ImageInput, ImageSource
 
 
 class LocalImageSource(ImageSource):

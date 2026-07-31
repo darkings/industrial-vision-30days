@@ -5,7 +5,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from core.result import (
+from core import (
     ErrorInfo,
     ExecutionStatus,
     InspectionRecord,

@@ -2,9 +2,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from camera.local_source import LocalImageSource
-from core.catalog import load_keycap_catalog
-from core.config import load_config
+from camera import LocalImageSource
+from core import load_keycap_catalog
+from core import load_config
 
 
 def main():

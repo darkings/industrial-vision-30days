@@ -2,9 +2,8 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from core.exceptions import InitializationError
-
 from .config_models import ModeName, RuntimeConfig
+from .exceptions import InitializationError
 from .paths import resolve_project_path
 
 

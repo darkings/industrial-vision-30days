@@ -142,7 +142,13 @@ class TraditionalProcessingConfig(StrictConfigModel):
         le=255,
         description="固定阈值，仅在 threshold_method='fixed' 时生效",
     )
+    invert: bool = Field(
+        default=True, description="是否反转二值图，使深色目标成为白色前景"
+    )
     blur_kernel: int = Field(..., gt=0, description="模糊核大小 (必须为正奇数)")
+    morphology_type: Literal["open", "close"] = Field(
+        ..., description="二值化阈值方法 (otsu/fixed)"
+    )
     morphology_kernel: int = Field(..., gt=0, description="形态学核大小 (必须为正奇数)")
 
     @field_validator("blur_kernel", "morphology_kernel")

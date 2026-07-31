@@ -10,7 +10,7 @@ from typing import Any
 
 import cv2
 import numpy as np
-from core.exceptions import CameraError, CameraOpenError
+from core import CameraError, CameraOpenError
 
 
 def check_sdk_ret(ret: int, action: str) -> None:

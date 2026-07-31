@@ -2,9 +2,9 @@ from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from core.config import load_yaml
-from core.exceptions import CatalogError, ProductNotFoundError
-from core.paths import resolve_project_path
+from .config import load_yaml
+from .exceptions import CatalogError, ProductNotFoundError
+from .paths import resolve_project_path
 
 
 class KeycapProduct(BaseModel):

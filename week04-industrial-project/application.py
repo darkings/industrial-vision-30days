@@ -2,12 +2,15 @@ import json
 from logging import LoggerAdapter
 from typing import Any
 
-from camera.factory import create_image_source
-from core.catalog import load_keycap_catalog
-from core.config_models import RuntimeConfig
-from core.context import RunContext
-from core.exceptions import NoImageAvailableError
-from core.exit_codes import ExitCode
+from camera import create_image_source
+from core import (
+    ExitCode,
+    NoImageAvailableError,
+    RunContext,
+    RuntimeConfig,
+    load_keycap_catalog,
+)
+from pipelines import run_pipeline
 
 
 class InspectionApplication:
@@ -32,6 +35,7 @@ class InspectionApplication:
             if image_input is None:
                 raise NoImageAvailableError(source=source.__class__.__name__)
             self._log_image_input(image_input)
+        pipeline_output = run_pipeline(self.config, self.context, image_input)
         return ExitCode.SUCCESS
 
     def _log_image_input(self, image_input: Any) -> None:

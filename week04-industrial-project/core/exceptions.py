@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from core.exit_codes import ExitCode
+from .exit_codes import ExitCode
 
 
 class InspectionError(Exception):
@@ -175,3 +175,20 @@ class CameraReadError(CameraError):
 
     def __init__(self, index: int | str, message: str | None = None):
         super().__init__(index, message or f"无法从相机读取图片: {index}")
+
+
+class SizeProfileNotFoundError(ConfigError):
+    """未找到对应尺寸的 profile。"""
+
+    exit_code: ExitCode = ExitCode.CONFIG_ERROR
+
+    def __init__(self, size_u: float, message: str | None = None):
+        self.size_u = size_u
+        super().__init__(message or f"未找到尺寸 {size_u:.1f}u 对应的 profile")
+
+
+class ModeConfigTypeError(ConfigError):
+    """mode_config 的类型与预期不一致。"""
+
+    # 仍然归类为配置错误，因此退出码保持 10
+    exit_code: ExitCode = ExitCode.CONFIG_ERROR

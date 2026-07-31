@@ -4,15 +4,14 @@ from typing import Any
 import yaml
 from pydantic import ValidationError
 
-from core.exceptions import ConfigError
-from core.paths import PROJECT_ROOT_PATH, resolve_project_path
-
 from .config_models import (
     MODE_CONFIG_MODELS,
     MainConfig,
     RuntimeConfig,
     StrictConfigModel,
 )
+from .exceptions import ConfigError
+from .paths import PROJECT_ROOT_PATH, resolve_project_path
 
 
 def load_yaml(config_path: Path) -> dict[str, Any]:

@@ -5,7 +5,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from core.config_models import MainConfig
+from core import MainConfig
 
 
 def test_01(data):

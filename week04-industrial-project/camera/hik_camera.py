@@ -4,10 +4,10 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from typing import Any
 
-from core.exceptions import CameraError, CameraOpenError, CameraReadError
+from core import CameraError, CameraOpenError, CameraReadError
 
-from camera.hik_sdk import HikCameraSDKDevice
-from camera.image_source import ImageInput, ImageSource
+from .hik_sdk import HikCameraSDKDevice
+from .image_source import ImageInput, ImageSource
 
 
 class HikCameraSource(ImageSource):
