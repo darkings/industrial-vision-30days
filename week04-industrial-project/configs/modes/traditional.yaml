@@ -10,6 +10,8 @@ processing:
   morphology_kernel: 5
 rules:
   expected_count: 1
+  expected_center_x: 655
+  expected_center_y: 456
   center_tolerance_px: 10
   size_profiles:
     "1.0u":

@@ -200,6 +200,8 @@ class TraditionalRulesConfig(StrictConfigModel):
     """传统图像处理判定规则配置。"""
 
     expected_count: int = Field(..., ge=0, description="期望检测到的目标数量")
+    expected_center_x: int = Field(ge=0, description="期望检测到的中心坐标x")
+    expected_center_y: int = Field(ge=0, description="期望检测到的中心坐标y")
     center_tolerance_px: int = Field(..., ge=0, description="中心点容忍误差(像素)")
     size_profiles: dict[str, SizeRuleConfig] = Field(
         ..., description="尺寸规则配置字典"
