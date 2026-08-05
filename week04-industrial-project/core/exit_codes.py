@@ -1,3 +1,4 @@
+from asyncio.subprocess import PIPE
 from enum import IntEnum
 
 
@@ -11,6 +12,7 @@ class ExitCode(IntEnum):
     * 20~29 表示目录/产品相关错误
     * 30~39 表示输入源/图像相关错误
     * 40~49 表示功能未实现
+    * 50~59 表示输出保存错误
     * 99 表示未知异常
     """
 
@@ -31,6 +33,13 @@ class ExitCode(IntEnum):
     UNSUPPORTED_IMAGE_FORMAT = 33  # 图像格式不支持
     IMAGE_DECODE_ERROR = 34  # 图像解码失败
     NO_IMAGE_AVAILABLE = 35  # 当前没有可用图像，例如队列为空或摄像头无帧
+
+    # 输出保存类错误
+    OUTPUT_ERROR = 50
+    IMAGE_WRITE_ERROR = 51
+    JSON_WRITE_ERROR = 52
+
+    PIPELINE_ERROR = 60  # 流水线执行失败，例如模型推理失败或后处理异常
 
     # 功能未实现
     FEATURE_NOT_IMPLEMENTED = 40  # 代码逻辑已预留，但功能尚未实现

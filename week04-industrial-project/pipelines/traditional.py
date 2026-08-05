@@ -283,10 +283,12 @@ class TraditionalPipeline(BasePipeline):
 
             cv2.putText(
                 annotated_image,
-                f"Area:{area} aspect_ratio:{aspect_ratio}",
-                (x, max(y - 15, 30)),
+                f"Area:{area:.1f} AR:{aspect_ratio:.3f}",
+                (x, max(y - 5, 30)),
                 cv2.FONT_HERSHEY_SIMPLEX,
                 0.8,
+                (0, 255, 255),
+                1,
                 cv2.LINE_AA,
             )
 
@@ -327,8 +329,8 @@ class TraditionalPipeline(BasePipeline):
         )
         cv2.putText(
             annotated_image,
-            f"Status:{record.inspection_result} Reasons:{','.join(record.reason_codes)}",
-            (10, 10),
+            f"Status:{record.inspection_result.value} Reasons:{','.join(record.reason_codes)}",
+            (10, 28),
             cv2.FONT_HERSHEY_SIMPLEX,
             0.8,
             (0, 255, 0)

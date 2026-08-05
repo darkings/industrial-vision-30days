@@ -6,11 +6,13 @@ from camera import create_image_source
 from core import (
     ExitCode,
     NoImageAvailableError,
+    PipelineError,
     RunContext,
     RuntimeConfig,
     load_keycap_catalog,
 )
 from pipelines import run_pipeline
+from reporting import OutputWriter
 
 
 class InspectionApplication:
@@ -24,6 +26,9 @@ class InspectionApplication:
         self.config = config
         self.context = context
         self.logger = logger
+        self.output_writer = OutputWriter(
+            self.config.main_config.output, self.context, self.logger
+        )
 
     def run(self) -> ExitCode:
         """完整的检测流程"""
@@ -36,6 +41,18 @@ class InspectionApplication:
                 raise NoImageAvailableError(source=source.__class__.__name__)
             self._log_image_input(image_input)
         pipeline_output = run_pipeline(self.config, self.context, image_input)
+        if pipeline_output is None:
+            self.logger.error("流水线执行失败，pipeline_output 为 None")
+            raise PipelineError("流水线执行失败，pipeline_output 为 None")
+        record = self.output_writer.write(
+            image_input=image_input, pipeline_output=pipeline_output
+        )
+        self.logger.info(
+            "检测完成 | image_id=%s | execution_status=%s | inspection_result=%s",
+            record.image_id,
+            record.execution_status.value,
+            record.inspection_result.value,
+        )
         return ExitCode.SUCCESS
 
     def _log_image_input(self, image_input: Any) -> None:

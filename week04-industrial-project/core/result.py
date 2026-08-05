@@ -66,6 +66,10 @@ class ResultPaths(StricResultModel):
     json_path: Path | None = Field(
         default=None, description="完整质检记录保存的 JSON 文件路径"
     )
+    original_path: Path | None = Field(default=None, description="原始图像路径")
+    debug_paths: dict[str, Path] = Field(
+        default_factory=dict, description="debug图片路径"
+    )
 
 
 class TimingInfo(StricResultModel):

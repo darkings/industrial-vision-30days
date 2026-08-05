@@ -192,3 +192,35 @@ class ModeConfigTypeError(ConfigError):
 
     # 仍然归类为配置错误，因此退出码保持 10
     exit_code: ExitCode = ExitCode.CONFIG_ERROR
+
+
+class PipelineError(InspectionError):
+    """流水线执行异常。"""
+
+    exit_code: ExitCode = ExitCode.PIPELINE_ERROR
+
+
+class OutputWriteError(InspectionError):
+    """输出文件写入失败。"""
+
+    exit_code = ExitCode.OUTPUT_ERROR
+
+
+class ImageWriteError(OutputWriteError):
+    """图片写入失败。"""
+
+    exit_code = ExitCode.IMAGE_WRITE_ERROR
+
+    def __init__(self, path: Path, message: str | None = None):
+        self.path = path
+        super().__init__(message or f"图片写入失败：{path}")
+
+
+class JsonWriteError(OutputWriteError):
+    """JSON 写入失败。"""
+
+    exit_code = ExitCode.JSON_WRITE_ERROR
+
+    def __init__(self, path: Path, message: str | None = None):
+        self.path = path
+        super().__init__(message or f"JSON 写入失败：{path}")

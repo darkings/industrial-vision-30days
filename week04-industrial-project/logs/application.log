@@ -1130,3 +1130,133 @@ AttributeError: 'RunContext' object has no attribute 'mode_config'
 2026-07-31 11:37:20,361 | INFO | Multi-Mode Keycap Vision Inspection System | 20260731_113720_328_traditional | camera_parameters:{}
 2026-07-31 11:37:20,361 | INFO | Multi-Mode Keycap Vision Inspection System | 20260731_113720_328_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
 2026-07-31 11:37:20,394 | INFO | Multi-Mode Keycap Vision Inspection System | 20260731_113720_328_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 08:15:25,715 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 08:15:25,715 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | app_version：1.0.0
+2026-08-05 08:15:25,716 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | active_mode：traditional
+2026-08-05 08:15:25,716 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | mode_config_type：TraditionalConfig
+2026-08-05 08:15:25,716 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | run_id：20260805_081525_714_traditional
+2026-08-05 08:15:25,716 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_081525_714_traditional
+2026-08-05 08:15:25,716 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_081525_714_traditional
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | image_id:KC_001
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | product_id:KC_001
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | batch_id:BATCH_01
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 08:15:25,742 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | source_type:image
+2026-08-05 08:15:25,743 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 08:15:25,743 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | camera_parameters:{}
+2026-08-05 08:15:25,743 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 08:15:25,773 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_081525_714_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 08:59:34,171 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 08:59:34,172 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | app_version：1.0.0
+2026-08-05 08:59:34,172 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | active_mode：traditional
+2026-08-05 08:59:34,172 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | mode_config_type：TraditionalConfig
+2026-08-05 08:59:34,172 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | run_id：20260805_085934_168_traditional
+2026-08-05 08:59:34,172 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_085934_168_traditional
+2026-08-05 08:59:34,173 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_085934_168_traditional
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | image_id:KC_001
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | product_id:KC_001
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | batch_id:BATCH_01
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | source_type:image
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | camera_parameters:{}
+2026-08-05 08:59:34,200 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 08:59:34,233 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_085934_168_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 09:06:34,006 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | app_version：1.0.0
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | active_mode：traditional
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | mode_config_type：TraditionalConfig
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | run_id：20260805_090634_004_traditional
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_090634_004_traditional
+2026-08-05 09:06:34,008 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_090634_004_traditional
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | image_id:KC_001
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | product_id:KC_001
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | batch_id:BATCH_01
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | source_type:image
+2026-08-05 09:06:34,042 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 09:06:34,043 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | camera_parameters:{}
+2026-08-05 09:06:34,043 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 09:06:34,085 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_090634_004_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 09:10:49,691 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 09:10:49,692 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | app_version：1.0.0
+2026-08-05 09:10:49,692 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | active_mode：traditional
+2026-08-05 09:10:49,692 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | mode_config_type：TraditionalConfig
+2026-08-05 09:10:49,693 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | run_id：20260805_091049_689_traditional
+2026-08-05 09:10:49,693 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_091049_689_traditional
+2026-08-05 09:10:49,693 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_091049_689_traditional
+2026-08-05 09:10:49,727 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | image_id:KC_001
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | product_id:KC_001
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | batch_id:BATCH_01
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | source_type:image
+2026-08-05 09:10:49,728 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 09:10:49,729 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | camera_parameters:{}
+2026-08-05 09:10:49,729 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 09:10:49,776 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_091049_689_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 15:18:04,884 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 15:18:04,884 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | app_version：1.0.0
+2026-08-05 15:18:04,884 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | active_mode：traditional
+2026-08-05 15:18:04,884 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | mode_config_type：TraditionalConfig
+2026-08-05 15:18:04,885 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | run_id：20260805_151804_880_traditional
+2026-08-05 15:18:04,885 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_151804_880_traditional
+2026-08-05 15:18:04,885 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_151804_880_traditional
+2026-08-05 15:18:04,909 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | image_id:KC_001
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | product_id:KC_001
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | batch_id:BATCH_01
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | source_type:image
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 15:18:04,910 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | camera_parameters:{}
+2026-08-05 15:18:04,911 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 15:18:04,941 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_151804_880_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 17:17:35,472 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | app_version：1.0.0
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | active_mode：traditional
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | mode_config_type：TraditionalConfig
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | run_id：20260805_171735_468_traditional
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_171735_468_traditional
+2026-08-05 17:17:35,473 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_171735_468_traditional
+2026-08-05 17:17:35,503 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 17:17:35,503 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | image_id:KC_001
+2026-08-05 17:17:35,503 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | product_id:KC_001
+2026-08-05 17:17:35,503 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | batch_id:BATCH_01
+2026-08-05 17:17:35,503 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 17:17:35,504 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | source_type:image
+2026-08-05 17:17:35,504 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 17:17:35,504 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | camera_parameters:{}
+2026-08-05 17:17:35,504 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 17:17:35,631 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 原始图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_171735_468_traditional\original\KC_001.png
+2026-08-05 17:17:35,718 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 标注图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_171735_468_traditional\annotated\KC_001.png
+2026-08-05 17:17:35,722 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 检测输出保存完成 | image_id=KC_001 | result=OK | json_path=C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_171735_468_traditional\KC_001.json
+2026-08-05 17:17:35,723 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 检测完成 | image_id=KC_001 | execution_status=SUCCESS | inspection_result=OK
+2026-08-05 17:17:35,808 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 原始图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_171735_468_traditional\original\KC_001.png
+2026-08-05 17:17:35,909 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 标注图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_171735_468_traditional\annotated\KC_001.png
+2026-08-05 17:17:35,913 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 检测输出保存完成 | image_id=KC_001 | result=OK | json_path=C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_171735_468_traditional\KC_001.json
+2026-08-05 17:17:35,913 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_171735_468_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
+2026-08-05 17:28:03,023 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 配置加载成功，系统日志初始化完毕
+2026-08-05 17:28:03,024 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | app_version：1.0.0
+2026-08-05 17:28:03,025 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | active_mode：traditional
+2026-08-05 17:28:03,025 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | mode_config_type：TraditionalConfig
+2026-08-05 17:28:03,025 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | run_id：20260805_172803_020_traditional
+2026-08-05 17:28:03,025 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | output_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_172803_020_traditional
+2026-08-05 17:28:03,025 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | report_dir：C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_172803_020_traditional
+2026-08-05 17:28:03,060 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | image_shape:(1024, 1280, 3)
+2026-08-05 17:28:03,060 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | image_id:KC_001
+2026-08-05 17:28:03,061 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | product_id:KC_001
+2026-08-05 17:28:03,061 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | batch_id:BATCH_01
+2026-08-05 17:28:03,061 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | captured_at:2026-07-28 11:28:02.975465+08:00
+2026-08-05 17:28:03,062 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | source_type:image
+2026-08-05 17:28:03,062 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | source_path:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\inputs\SET_001\KC_001.png
+2026-08-05 17:28:03,062 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | camera_parameters:{}
+2026-08-05 17:28:03,062 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | metadata:{"timestamp_source": "file_mtime", "file_mtime": 1785209282.9754646, "color_space": "BGR", "shape": [1024, 1280, 3], "dtype": "uint8", "legend": "F8", "size_u": 1.0}
+2026-08-05 17:28:03,193 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 原始图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_172803_020_traditional\original\KC_001.png
+2026-08-05 17:28:03,301 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 标注图片保存成功! 路径:C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\outputs\20260805_172803_020_traditional\annotated\KC_001.png
+2026-08-05 17:28:03,313 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 检测输出保存完成 | image_id=KC_001 | result=OK | json_path=C:\Users\Jie\Projects\industrial-vision-30days\week04-industrial-project\reports\20260805_172803_020_traditional\KC_001.json
+2026-08-05 17:28:03,315 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 检测完成 | image_id=KC_001 | execution_status=SUCCESS | inspection_result=OK
+2026-08-05 17:28:03,316 | INFO | Multi-Mode Keycap Vision Inspection System | 20260805_172803_020_traditional | 程序结束 | exit_code=0 | exit_name=SUCCESS 
