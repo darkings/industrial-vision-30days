@@ -1,14 +1,15 @@
 from pathlib import Path
 
-from core import InspectionRecord, JsonWriteError
+from core import JsonWriteError
+from pydantic import BaseModel
 
 
-def write_json(path: Path, records: InspectionRecord):
+def write_json(path: Path, model: BaseModel):
     """写入JSON"""
 
     try:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(records.model_dump_json(indent=2), encoding="utf-8")
+        path.write_text(model.model_dump_json(indent=2), encoding="utf-8")
         return path
     except (OSError, TypeError, ValueError) as exc:
         raise JsonWriteError(path, message=f"写入JSON失败 路径：{path} 错误：{exc}")

@@ -8,9 +8,9 @@ mode_configs:
   ocr: configs/modes/ocr.yaml
   combined: configs/modes/combined.yaml
 input:
-  source: image
-  image_path: inputs/SET_001/KC_001.png
-  directory_path: null
+  source: directory
+  image_path: null
+  directory_path: inputs/SET_001
   catalog_path: data/catalogs/keycaps.yaml
   product_id: KC_001
   batch_id: BATCH_01

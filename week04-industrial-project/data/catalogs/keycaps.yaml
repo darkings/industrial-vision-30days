@@ -1,5 +1,71 @@
 set_id: SET_001
 products:
-  - product_id: KC_001
-    legend: F8
+  - product_id: KC_+=
+    legend: "+="
+    size_u: 1.0
+  - product_id: KC_1!
+    legend: "1!"
+    size_u: 1.0
+  - product_id: KC_3#
+    legend: "3#"
+    size_u: 1.0
+  - product_id: KC_8
+    legend: "8"
+    size_u: 1.0
+  - product_id: KC_9
+    legend: "9"
+    size_u: 1.0
+  - product_id: KC_A
+    legend: "A"
+    size_u: 1.0
+  - product_id: KC_C
+    legend: "C"
+    size_u: 1.0
+  - product_id: KC_Ctrl
+    legend: "Ctrl"
+    size_u: 1.0
+  - product_id: KC_D
+    legend: "D"
+    size_u: 1.0
+  - product_id: KC_Del
+    legend: "Del"
+    size_u: 1.0
+  - product_id: KC_Down
+    legend: "Down"
+    size_u: 1.0
+  - product_id: KC_ESC
+    legend: "ESC"
+    size_u: 1.0
+  - product_id: KC_F1
+    legend: "F1"
+    size_u: 1.0
+  - product_id: KC_F10
+    legend: "F10"
+    size_u: 1.0
+  - product_id: KC_F12
+    legend: "F12"
+    size_u: 1.0
+  - product_id: KC_F5
+    legend: "F5"
+    size_u: 1.0
+  - product_id: KC_F6
+    legend: "F6"
+    size_u: 1.0
+  - product_id: KC_F7
+    legend: "F7"
+    size_u: 1.0
+  - product_id: KC_F8
+    legend: "F8"
+    size_u: 1.0
+  - product_id: KC_M
+    legend: "M"
+    size_u: 1.0
+  - product_id: KC_PgUp
+    legend: "PgUp"
+    size_u: 1.0
+  - product_id: KC_R
+    legend: "R"
+    size_u: 1.0
+  - product_id: KC_~
+    legend: "~"
     size_u: 1.0

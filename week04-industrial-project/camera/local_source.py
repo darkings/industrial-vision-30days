@@ -1,16 +1,16 @@
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from core import KeycapProduct
 from core import (
     ImageDecodeError,
     ImageNotFoundError,
     InputNotFileError,
     InputSourceError,
+    KeycapProduct,
     SourceNotOpenedError,
     UnsupportedImageFormatError,
+    resolve_project_path,
 )
-from core import resolve_project_path
 from pydantic import ValidationError
 
 from .image_source import ImageInput, ImageSource
@@ -19,11 +19,13 @@ from .image_source import ImageInput, ImageSource
 class LocalImageSource(ImageSource):
     def __init__(
         self,
-        image_path: Path,
+        image_path: Path | None,
         product: KeycapProduct,
         batch_id: str,
         allowed_extensions: list[str],
     ):
+        if image_path is None:
+            raise ImageNotFoundError(path=None, message="image_path 不能为空")
         self.image_path = image_path
         self.product = product
         self.batch_id = batch_id
@@ -33,18 +35,21 @@ class LocalImageSource(ImageSource):
         self._closed = False
 
     def open(self):
+
         image_path = resolve_project_path(self.image_path)
         if not image_path.exists():
             raise ImageNotFoundError(
-                image_path, message=f"无法读取图片: 当前路径不存在 {image_path}"
+                str(image_path), message=f"无法读取图片: 当前路径不存在 {image_path}"
             )
         if not image_path.is_file():
             raise InputNotFileError(
-                image_path, message=f"无法读取图片: 当前路径不是一个文件 {image_path}"
+                str(image_path),
+                message=f"无法读取图片: 当前路径不是一个文件 {image_path}",
             )
         if image_path.suffix.lower() not in self.allowed_extensions:
             raise UnsupportedImageFormatError(
-                image_path, message=f"无法读取图片: 图片格式不支持 {image_path.suffix}"
+                str(image_path),
+                message=f"无法读取图片: 图片格式不支持 {image_path.suffix}",
             )
         self.image_path = image_path
         self._opened = True
@@ -62,7 +67,7 @@ class LocalImageSource(ImageSource):
             cn_tz = timezone(timedelta(hours=8))
             captured_at = datetime.fromtimestamp(mtime, tz=cn_tz)
             if image is None:
-                raise ImageDecodeError(self.image_path)
+                raise ImageDecodeError(str(self.image_path))
             metadata = {
                 "timestamp_source": "file_mtime",
                 "file_mtime": mtime,

@@ -1,6 +1,8 @@
 from logging import LoggerAdapter
 
-from core import FeatureNotImplementedError, KeycapCatalog, RuntimeConfig
+from core import InputSourceError, KeycapCatalog, RuntimeConfig
+
+from camera import DirectoryImageSource
 
 from .hik_camera import HikCameraSource
 from .image_source import ImageSource
@@ -19,7 +21,12 @@ def create_image_source(
         )
 
     if config.main_config.input.source == "directory":
-        raise FeatureNotImplementedError("directory功能尚未实现")
+        return DirectoryImageSource(
+            directory=config.main_config.input.directory_path,
+            allowed_extensions=config.main_config.input.allowed_extensions,
+            catalog=catalog,
+            batch_id=config.main_config.input.batch_id,
+        )
     if config.main_config.input.source == "camera":
         return HikCameraSource(
             camera_config=config.main_config.camera,
@@ -27,3 +34,4 @@ def create_image_source(
             product=catalog.get_product(product_id=config.main_config.input.product_id),
             logger=logger,
         )
+    raise InputSourceError(config.main_config.input.source)

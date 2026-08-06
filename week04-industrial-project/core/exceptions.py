@@ -49,7 +49,7 @@ class ProductNotFoundError(CatalogError):
 
     exit_code: ExitCode = ExitCode.PRODUCT_NOT_FOUND
 
-    def __init__(self, product_id: str, message: str | None = None):
+    def __init__(self, product_id: str | None, message: str | None = None):
         # 保存业务上下文，方便日志直接定位到具体产品
         self.product_id = product_id
         super().__init__(message or f"无法寻找到标识为 {product_id} 的产品")
@@ -94,7 +94,7 @@ class ImageReadError(InputSourceError):
 
     exit_code: ExitCode = ExitCode.INPUT_ERROR
 
-    def __init__(self, path: str, message: str | None = None):
+    def __init__(self, path: str | None, message: str | None = None):
         self.path = path
         super().__init__(message or f"无法读取图片: {path}")
 
@@ -104,7 +104,7 @@ class ImageNotFoundError(ImageReadError):
 
     exit_code: ExitCode = ExitCode.IMAGE_NOT_FOUND
 
-    def __init__(self, path: str, message: str | None = None):
+    def __init__(self, path: str | None, message: str | None = None):
         super().__init__(path, message or f"图片文件不存在: {path}")
 
 
@@ -134,6 +134,15 @@ class ImageDecodeError(ImageReadError):
 
     def __init__(self, path: str, message: str | None = None):
         super().__init__(path, message or f"图片解码失败: {path}")
+
+
+class ImageDirectoryNotFoundError(ImageReadError):
+    """图片目录不存在。"""
+
+    exit_code: ExitCode = ExitCode.IMAGE_DIRECTORY_NOT_FOUND
+
+    def __init__(self, path: str, message: str | None = None):
+        super().__init__(path, message or f"图片目录不存在: {path}")
 
 
 class NoImageAvailableError(InputSourceError):

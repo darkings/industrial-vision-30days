@@ -53,7 +53,9 @@ class KeycapCatalog(BaseModel):
 
         return self
 
-    def get_product(self, product_id: str) -> KeycapProduct:
+    def get_product(self, product_id: str | None) -> KeycapProduct:
+        if product_id is None:
+            raise ProductNotFoundError(product_id=None,message="product_id 不能为空")
         for product in self.products:
             if product.product_id == product_id:
                 return product

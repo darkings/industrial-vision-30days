@@ -5,6 +5,7 @@ from typing import Any
 from camera import create_image_source
 from core import (
     ExitCode,
+    InspectionRecord,
     NoImageAvailableError,
     PipelineError,
     RunContext,
@@ -12,7 +13,7 @@ from core import (
     load_keycap_catalog,
 )
 from pipelines import run_pipeline
-from reporting import OutputWriter
+from reporting import OutputWriter, SummaryWriter
 
 
 class InspectionApplication:
@@ -36,23 +37,32 @@ class InspectionApplication:
         catalog = load_keycap_catalog(self.config.main_config.input.catalog_path)
         source = create_image_source(self.config, catalog, self.logger)
         with source:
-            image_input = source.read()
-            if image_input is None:
-                raise NoImageAvailableError(source=source.__class__.__name__)
-            self._log_image_input(image_input)
-        pipeline_output = run_pipeline(self.config, self.context, image_input)
-        if pipeline_output is None:
-            self.logger.error("流水线执行失败，pipeline_output 为 None")
-            raise PipelineError("流水线执行失败，pipeline_output 为 None")
-        record = self.output_writer.write(
-            image_input=image_input, pipeline_output=pipeline_output
-        )
-        self.logger.info(
-            "检测完成 | image_id=%s | execution_status=%s | inspection_result=%s",
-            record.image_id,
-            record.execution_status.value,
-            record.inspection_result.value,
-        )
+            records: list[InspectionRecord] = []
+            while True:
+                image_input = source.read()
+                if image_input is None:
+                    if not records:
+                        raise NoImageAvailableError(source=source.__class__.__name__)
+                    break
+                self._log_image_input(image_input)
+                pipeline_output = run_pipeline(self.config, self.context, image_input)
+                if pipeline_output is None:
+                    self.logger.error("流水线执行失败，pipeline_output 为 None")
+                    raise PipelineError("流水线执行失败，pipeline_output 为 None")
+                record = self.output_writer.write(
+                    image_input=image_input, pipeline_output=pipeline_output
+                )
+                records.append(record)
+                self.logger.info(
+                    "检测完成 | image_id=%s | execution_status=%s | inspection_result=%s",
+                    record.image_id,
+                    record.execution_status.value,
+                    record.inspection_result.value,
+                )
+                if self.config.main_config.input.source == "camera":
+                    break
+            summary_writer = SummaryWriter(context=self.context, logger=self.logger)
+            summary_writer.write(records)
         return ExitCode.SUCCESS
 
     def _log_image_input(self, image_input: Any) -> None:
